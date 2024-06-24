@@ -1,0 +1,64 @@
+:root{
+    --color-primary: #35A7FF;
+    
+}
+
+body {
+    font-family: 'Abyssinica SIL', serif;
+}
+.navbar-brand img {
+    width: 50px;
+    height: auto;
+}
+.header-image {
+    width: 100%;
+    height: auto;
+}
+.navbar {
+    background-color: #35A7FF;
+}
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.navbar-nav .nav-item {
+    margin: 0; /* Eliminando margen */
+}
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 1.1em;
+    padding: 0.3rem 0.5rem;
+}
+.container h2, .container p {
+    text-align: center;
+}
+.container h2 {
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+.container p {
+    font-size: 1.2em;
+}
+.section {
+    padding: 20px 0;
+}
+.card {
+    margin: 10px;
+}
+.card-body {
+    background-color: #35A7FF;
+    color: white;
+}
+.btn-learn-more {
+    margin-top: 20px;
+}
+.btn-primary {
+    background-color: #35A7FF;
+    border-color: #35A7FF;
+}
+
+/* secciones */
+.caucons{
+    background-color: var(--color-primary);
+}
