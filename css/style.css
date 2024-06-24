@@ -6,30 +6,37 @@
 body {
     font-family: 'Abyssinica SIL', serif;
 }
+
 .navbar-brand img {
     width: 50px;
     height: auto;
 }
+
 .header-image {
     width: 100%;
     height: auto;
 }
+
 .navbar {
-    background-color: #35A7FF;
+    background-color: var(--color-primary);
 }
-.navbar-nav {
+
+/* .navbar-nav {
     width: 100%;
     display: flex;
     justify-content: space-around;
-}
-.navbar-nav .nav-item {
-    margin: 0; /* Eliminando margen */
-}
-.navbar-nav .nav-link {
+} */
+
+/* .navbar-nav .nav-item {
+    margin: 0; 
+} */
+
+/* .navbar-nav .nav-link {
     color: #fff !important;
     font-size: 1.1em;
     padding: 0.3rem 0.5rem;
-}
+} */
+
 .container h2, .container p {
     text-align: center;
 }
