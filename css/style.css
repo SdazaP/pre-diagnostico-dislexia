@@ -4,7 +4,11 @@
 }
 
 body {
-    font-family: 'Abyssinica SIL', serif;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
 }
 
 /* Navbar */
@@ -15,20 +19,17 @@ body {
     height: auto;
 }
 
-.header-image {
-    width: 100%;
-    height: auto;
-}
 
 .navbar {
     background-color: var(--color-primary);
+    font-family: 'Abyssinica SIL', serif;
 }
 
 .navbar-light .navbar-nav .nav-link{
     color: #fff;
     font-weight: bold;
 }
-
+/* Banner */
 .header-image {
     width: 80%;
     height: auto;
@@ -37,20 +38,24 @@ body {
     margin-right: auto;
     border-radius: 12px; 
 }
+/* ¿Qué es dislexia */
+.container h1, .container p {
+    text-align: left;
+}
 
-.container h2, .container p {
-    text-align: center;
+.container h1 {
+    font-weight: bold;
+    margin: 0 0 1em 0;
 }
-.container h2 {
-    font-size: 2.5em;
-    margin-top: 20px;
-}
+
 .container p {
     font-size: 1.2em;
 }
+
 .section {
     padding: 20px 0;
 }
+
 .btn-learn-more {
     margin-top: 20px;
     width: 130px; 
@@ -58,6 +63,7 @@ body {
     float: left; 
     margin-left: 0; 
 }
+
 .btn-primary {
     background-color: #35A7FF;
     border-color: #35A7FF;
@@ -106,6 +112,11 @@ body {
     height: auto;
     border-radius: 10px;
     margin-left: 10px;
+}
+.mitos h2{
+    text-align: left;
+    font-weight: bold;
+    margin: 0 0 1em 0;
 }
 
 /* footer */
