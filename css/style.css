@@ -94,10 +94,9 @@ body {
 }
 
 .myth-image {
-    border-radius: 12px; 
-    border: 2px solid black; 
-    max-width: 100%; 
+    width: 70%; 
     height: auto; 
+    border-radius: 10px;
     display: block; 
 }
 
