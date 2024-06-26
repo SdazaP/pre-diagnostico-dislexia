@@ -11,22 +11,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand navbar-light">
+    <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="images/Logo.png" alt="Logo">
             </a>
-            <div class="navbar-collapse" id="navbarNav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Evaluaciones</a>
@@ -47,18 +51,20 @@
 
     <!-- Header Image -->
     <div class="container mt-4">
-        <img src="images/Banner.jpeg" alt="Header Image" class="header-image">
+        <img src="images/Banner.jpeg" alt="Header Image" class="header-image img-fluid">
     </div>
 
     <!-- Contenido Principal -->
     <section class="container mt-4 qdislexia">
         <div class="row">
             <div class="col-md-4">
-                <img src="images/que es la dislexia.png" alt="Imagen sobre dislexia" class="info-image">
+                <img src="images/que es la dislexia.png" alt="Imagen sobre dislexia" class="info-image img-fluid">
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
                 <h1>¿Qué es la Dislexia?</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus molestiae dolorem eius velit tempore optio quis fuga necessitatibus quae autem. Consectetur dicta ducimus ipsa laborum! Doloribus repellendus laudantium voluptatum. Blanditiis?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus molestiae dolorem eius velit
+                    tempore optio quis fuga necessitatibus quae autem. Consectetur dicta ducimus ipsa laborum! Doloribus
+                    repellendus laudantium voluptatum. Blanditiis?</p>
                 <a class="btn btn-primary btn-learn-more" href="#" role="button">Aprende más</a>
             </div>
         </div>
@@ -68,7 +74,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="image-container">
-                    <center><img class="card-image" src="images/causas.jpeg"></center>
+                    <center><img class="card-image img-fluid" src="images/causas.jpeg"></center>
                 </div>
                 <h3 class="card-title">
                     <center><strong>Causas de la Dislexia</strong></center>
@@ -79,7 +85,7 @@
             </div>
             <div class="col-md-6">
                 <div class="image-container">
-                    <center><img class="card-image" src="images/consecuencias.jpeg"></center>
+                    <center><img class="card-image img-fluid" src="images/consecuencias.jpeg"></center>
                 </div>
                 <h3 class="card-title">
                     <center><strong>Consecuencias de la Dislexia</strong></center>
@@ -92,48 +98,56 @@
     </section>
 
     <section class="container mt-4 mitos">
-        <center><div class="row">
-            <div class="col-md-6">
-                <h1>Mitos sobre la Dislexia</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores aliquam aut, atque fugit quasi
-                    animi
-                    quae eos impedit nostrum culpa magni obcaecati vero incidunt esse nisi! Nemo tempore quis
-                    cupiditate.</p>
+        <center>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Mitos sobre la Dislexia</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores aliquam aut, atque fugit
+                        quasi
+                        animi
+                        quae eos impedit nostrum culpa magni obcaecati vero incidunt esse nisi! Nemo tempore quis
+                        cupiditate.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="myth-image img-fluid" src="images/mitos.jpeg">
+                </div>
             </div>
-            <div class="col-md-6">
-                <img class="myth-image" src="images/mitos.jpeg">
-            </div>
-        </div></center>
+        </center>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-head">
+            <div class="footer-head d-flex justify-content-between align-items-center">
                 <div class="img-footer">
                     <img src="images/Logo.png" alt="">
                 </div>
                 <div class="footer-name">
-                    <h1>Pre-Diagnóstico de Dislexia en niños
-                        de 1ro y 2do grado de primaria</h1>
+                    <h1 class="text-center text-md-left">Pre-Diagnóstico de Dislexia en niños de 1ro y 2do grado de primaria</h1>
                 </div>
             </div>
-            <div class="footer-center">
-                <div class="mision">
-                    <h4>Nuestra Misión</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quae laboriosam fugit doloremque quos ipsa eos vitae aliquid voluptatum necessitatibus.</p>
+            <div class="footer-center row">
+                <div class="col-md-6">
+                    <div class="mision">
+                        <h4>Nuestra Misión</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quae laboriosam fugit
+                            doloremque quos ipsa eos vitae aliquid voluptatum necessitatibus.</p>
+                    </div>
                 </div>
-                <div class="list">
-                    <ul>
-                        <li>Evaluaciones</li>
-                        <li>Acerca de</li>
-                        <li>Nosotros</li>
-                        <li>Contacto</li>
-                        <li>Catalógo de Instituciones</li>
-                    </ul>
+                <div class="col-md-6">
+                    <div class="list">
+                        <h4>Enlaces</h4>
+                        <ul>
+                            <li>Evaluaciones</li>
+                            <li>Acerca de</li>
+                            <li>Nosotros</li>
+                            <li>Contacto</li>
+                            <li>Catalógo de Instituciones</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <hr>
-            <div class="footer-end">
+            <div class="footer-end text-center text-md-left">
                 <p>Desarrollado por Aguilar J., Daza S. y González E. <br> I.T.S de Tepexi de Rodríguez</p>
             </div>
         </div>
@@ -142,7 +156,8 @@
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
