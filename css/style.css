@@ -129,6 +129,7 @@ body {
 .footer{
     background-color: var(--color-primary);
     padding: 5em 0 1em 0;
+    color: #fff;
 }
 
 .footer-head{
