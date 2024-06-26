@@ -184,6 +184,45 @@ body {
 
 /* aqui para hacer resposivo */
 
+@media (max-width: 768px) {
+    .header-image{
+        width: 100%;
+    }
+
+}
 
 
+@media (max-width: 426px) {
+    .footer-head{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+    .img-footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .mision{
+        width: 80%;
+    }
+
+    .list{
+        width: 80%;
+    }
+
+    .list ul{
+    list-style-type: none;
+    padding: 0;
+}
+}
 /* ......... */
