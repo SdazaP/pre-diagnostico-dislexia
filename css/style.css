@@ -184,7 +184,85 @@ body {
     font-size: 12px;
 }
 
+/* Evaluaciones */
+
+.container.mt-4.eval {
+    margin-bottom: 50px;
+}
+
+.container.mt-4.eval .text-center h1 {
+    text-align: center;
+}
+
+/* Carrusel */
+.carousel-inner {
+    width: 100%;
+    border-radius: 25px;
+    background-color: gray;
+}
+
+.carousel-item {
+    margin-bottom: 45px;
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    color: black; 
+    text-align: center; 
+    background: lightblue; 
+    padding: 5px; 
+    max-width: 80%;
+}
+
+.carousel-caption h3 {
+    margin: 0;
+    font-size: 2.5vw; 
+}
+
+.carousel-control-prev {
+    background-color: grey;
+    border-radius: 25px 0 0 25px;
+}
+
+.carousel-control-next {
+    background-color: grey;
+    border-radius: 0 25px 25px 0;
+}
+
+/* Articulo */
+.container.mt-4.art {
+    margin-bottom: 50px;
+}
+
+.titulo{
+    font-size: 2.5em;
+}
+
 /* aqui para hacer resposivo */
+
+@media (max-width: 426px) {
+    .carousel-caption h3 {
+        font-size: 5vw; 
+    }
+}
+
+@media (max-width: 426px) {
+    .titulo {
+        font-size: 2em; 
+    }
+}
+
+
 
 @media (max-width: 768px) {
     .header-image{
