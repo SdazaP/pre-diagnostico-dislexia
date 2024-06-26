@@ -127,7 +127,7 @@ body {
 /* footer */
 .footer{
     background-color: var(--color-primary);
-    padding: 5em 0;
+    padding: 5em 0 1em 0;
 }
 
 .footer-head{
@@ -177,6 +177,13 @@ body {
 }
 
 .footer-end p{
-    text-align: left;
+    text-align: center;
     font-weight: bold;
+    font-size: 12px;
 }
+
+/* aqui para hacer resposivo */
+
+
+
+/* ......... */
