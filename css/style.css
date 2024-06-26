@@ -185,6 +185,9 @@ body {
 }
 
 /* Evaluaciones */
+.container.mt-4.carrusel{
+    width: 80%;
+}
 
 .container.mt-4.eval {
     margin-bottom: 50px;
