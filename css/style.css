@@ -194,6 +194,10 @@ body {
 }
 
 /* Carrusel */
+.container.mt-4.carousel{
+    width: 80%;
+}
+
 .carousel-inner {
     width: 100%;
     border-radius: 25px;
