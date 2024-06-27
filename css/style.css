@@ -289,6 +289,25 @@ body {
     width: 50%;
 }
 
+.modal-content{
+    border-radius: 1.5em;
+}
+
+.modal-body{
+    margin: 0 0 1em 0;
+}
+
+.modal-body img{
+    width: 6em;
+    margin: 2em;
+}
+
+.modal-body h2{
+    width: 60%;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
 /* responsive */
 
 @media (max-width: 426px) {
