@@ -199,7 +199,7 @@ body {
 
 /* Carrusel */
 .container.mt-4.carrusel{
-    width: 80%;
+    width: 70%;
 }
 
 .carousel-inner {
@@ -259,7 +259,7 @@ body {
 
 @media (max-width: 426px) {
     .carousel-caption h3 {
-        font-size: 5vw; 
+        font-size: 4vw; 
     }
 }
 
