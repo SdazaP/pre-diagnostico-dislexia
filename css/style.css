@@ -255,7 +255,41 @@ body {
     font-size: 2.5em;
 }
 
-/* aqui para hacer resposivo */
+/* Formulario de contacto */
+
+.cont{
+    display: flex;
+    align-items: center;
+    height: 90vh;
+}
+
+.contact{
+    display: flex;
+    height: 80%;
+    gap: 2em;
+}
+
+.info-contact{
+    width: 50%;
+}
+
+.info-contact p{
+    margin: 0 0 2em 0;
+}
+
+.info-contact .img-contact{
+    text-align: center;
+}
+
+.img-contact img{
+    width: 40%;
+}
+
+.form-contact{
+    width: 50%;
+}
+
+/* responsive */
 
 @media (max-width: 426px) {
     .carousel-caption h3 {
@@ -269,17 +303,8 @@ body {
     }
 }
 
-
-
-@media (max-width: 768px) {
-    .header-image{
-        width: 100%;
-    }
-
-}
-
-
 @media (max-width: 426px) {
+    /* footer */
     .footer-head{
         display: flex;
         flex-direction: column;
@@ -308,8 +333,60 @@ body {
     }
 
     .list ul{
-    list-style-type: none;
-    padding: 0;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .footer-name{
+         width: 80%;
+    }
+
+    .footer-name h1{
+        font-size: 1.5em;   
+    }
+
+    /* contacto */
+
+    .cont{
+        display: flex;
+        align-items: center;
+        height: auto;
+
+    }
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-contact h1{
+        text-align: center;
+    }
+
+    .img-contact img{
+        width: 80%;
+    }
+
+    .info-contact{
+        width: 80%;
+    }
+
+    .form-contact{
+        width: 80%;
+    }
+    
 }
+
+@media (max-width: 768px) {
+    .header-image{
+        width: 100%;
+    }
+
+    /* contacto */
+    .cont{
+        height: auto;
+        margin: 4em 0;
+    }
+
 }
-/* ......... */
