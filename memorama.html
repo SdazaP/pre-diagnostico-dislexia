@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/Logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Evaluaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Instituciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mt-4 memo">
+        <div class="text-center">
+            <h1>Memorama</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus molestiae dolorem eius velit
+                tempore optio quis fuga necessitatibus quae autem. Consectetur dicta ducimus ipsa laborum! Doloribus
+                repellendus laudantium voluptatum. Blanditiis?</p>
+        </div>
+    </section>
+
+    <section class="memory-game">
+        <div id="memory-cards" class="memo-cards"></div>
+    </section>
+
+    <div class="modal fade" id="modalGanador" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="images/check.png" alt="Éxito">
+                    <h2>¡Has ganado!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-white">
+        <div class="container">
+            <div class="footer-head">
+                <div class="img-footer">
+                    <img src="images/Logo.png" alt="">
+                </div>
+                <div class="footer-name">
+                    <h1>Pre-Diagnóstico de Dislexia en niños de 1ro y 2do grado de
+                        primaria</h1>
+                </div>
+            </div>
+            <div class="footer-center">
+                <div class="mision">
+                    <h4>Nuestra Misión</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quae laboriosam fugit
+                        doloremque quos ipsa eos vitae aliquid voluptatum necessitatibus.</p>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>Evaluaciones</li>
+                        <li>Acerca de</li>
+                        <li>Nosotros</li>
+                        <li>Contacto</li>
+                        <li>Catalógo de Instituciones</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="footer-end">
+            <p>Desarrollado por Aguilar J., Daza S. y González E. <br> I.T.S de Tepexi de Rodríguez</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="js/memorama.js"></script>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    function mostrarModalDeGanador() {
+        $('#modalGanador').modal('show'); 
+    }
+    </script>
+
+</body>
+
+</html>
