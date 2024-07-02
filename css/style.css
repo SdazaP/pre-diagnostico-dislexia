@@ -386,6 +386,55 @@ body {
     margin-top: 50px;
 }
 
+/* Completa la palabra */
+
+.words-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+.exercise-container {
+    max-width: 500px;
+    padding: 20px;
+    border: 2px solid #35A7FF;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 25px;
+}
+
+.word-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.word-slot {
+    width: 80px;
+    height: 50px;
+    border: 2px dashed #35A7FF;
+    display: inline-block;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.syllable {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #35A7FF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.syllable.correct {
+    background-color: #4CAF50;
+}
+
 /* responsive */
 
 @media (max-width: 426px) {
