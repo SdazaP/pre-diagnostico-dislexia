@@ -58,22 +58,23 @@
                 </div>
             </div>
             <div class="form-contact">
-                <form onsubmit="event.preventDefault(); mostrarModal();">
+                <form  action="https://formspree.io/f/mwpekoqw"
+                method="POST" >
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre de contacto">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre de contacto">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email de contacto">
+                        <input type="email" class="form-control" name="email" placeholder="Email de contacto">
                     </div>
                     <div class="form-group">
                         <label for="asunto">Asunto</label>
-                        <input type="text" class="form-control" id="asunto" placeholder="Motivo de contacto">
+                        <input type="text" class="form-control" name="asunto" placeholder="Motivo de contacto">
                     </div>
                     <div class="form-group">
                         <label for="mensaje">Mensaje</label>
-                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Describe tu motivo"></textarea>
+                        <textarea class="form-control" name="mensaje" rows="3" placeholder="Describe tu motivo"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
@@ -82,21 +83,7 @@
     </div>
 
     <!-- Modal de confirmación -->
-    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="images/check.png" alt="Éxito">
-                    <h2>Enviado con éxito</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Pie de Página  -->
     <footer class="footer">
