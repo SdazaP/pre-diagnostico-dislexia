@@ -488,67 +488,6 @@ body {
 
 }
 
-/* acerca-de */
-.about-section {
-    background-color: #f8f9fa;
-    padding: 60px 0;
-}
-
-
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons img {
-    width: 30px;
-    margin-right: 10px;
-}
-
-.social-icons a {
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    opacity: 0.7;
-}
-
-.about-section .row.mt-5 {
-    margin-top: 50px;
-}
-
-
-/* Memorama */
-@media (max-width: 1024px) {
-    .memo-cards {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .memory-game{
-        margin-top: -75px;
-    }
-}
-
-@media (max-width: 768px) {
-    .memo-cards {
-        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-    }
-
-    .memory-game{
-        margin-top: -25px;
-    }
-}
-
-@media (max-width: 425px) {
-    .memo-cards {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    .memory-game{
-        margin-bottom: 25px;
-        margin-top: 10px;
-    }
-}
-
 /* Memorama */
 @media (max-width: 1024px) {
     .memo-cards {
