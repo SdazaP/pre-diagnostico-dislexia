@@ -308,6 +308,84 @@ body {
     font-weight: bold;
 }
 
+/* Memorama */
+
+.memory-game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    margin-top: -75px;
+}
+
+.memo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
+    max-width: 90%; 
+    padding: 20px;
+    margin: 0 auto; 
+}
+
+.memo-card {
+    width: 100%; 
+    height: 0;
+    padding-top: 100%; 
+    background-color: lightblue;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.5s ease; 
+}
+
+.memo-card.flipped {
+    background-color: white;
+    box-shadow: 0 0 0 2px black; 
+    transform: scale(0.95); 
+}
+
+.container.mt-4.memo {
+    margin-bottom: 0px;
+}
+
+.container.mt-4.memo .text-center h1 {
+    text-align: center;
+}
+
+/* acerca-de */
+.about-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+.about-section .row.mt-5 {
+    margin-top: 50px;
+}
+
 /* responsive */
 
 @media (max-width: 426px) {
@@ -438,3 +516,67 @@ body {
     margin-top: 50px;
 }
 
+
+/* Memorama */
+@media (max-width: 1024px) {
+    .memo-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .memory-game{
+        margin-top: -75px;
+    }
+}
+
+@media (max-width: 768px) {
+    .memo-cards {
+        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    }
+
+    .memory-game{
+        margin-top: -25px;
+    }
+}
+
+@media (max-width: 425px) {
+    .memo-cards {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .memory-game{
+        margin-bottom: 25px;
+        margin-top: 10px;
+    }
+}
+
+/* Memorama */
+@media (max-width: 1024px) {
+    .memo-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .memory-game{
+        margin-top: -75px;
+    }
+}
+
+@media (max-width: 768px) {
+    .memo-cards {
+        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    }
+
+    .memory-game{
+        margin-top: -25px;
+    }
+}
+
+@media (max-width: 425px) {
+    .memo-cards {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .memory-game{
+        margin-bottom: 25px;
+        margin-top: 10px;
+    }
+}
