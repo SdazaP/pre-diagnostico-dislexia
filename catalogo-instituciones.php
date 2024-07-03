@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo de Instituciones</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <!-- Barra de Navegación -->
-    <nav class="navbar navbar-expand navbar-light">
-        <a class="navbar-brand" href="#">
-            <img src="images/Logo.png" alt="Logo">
-        </a>
-        <div class="navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Evaluaciones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Instituciones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Acerca</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<?php include("template/header.php")?>
     <!-- Sección: Catálogo de instituciones  -->
     <section class="container mt-5">
         <h2><strong>Catálogo de instituciones relacionadas al tratamiento de la dislexia</strong></h2>
@@ -101,46 +63,4 @@
 
     </section>
 
-    <!-- Carrusel de Evaluaciones  -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-head">
-                <div class="img-footer">
-                    <img src="images/Logo.png" alt="">
-                </div>
-                <div class="footer-name">
-                    <h1>Pre-Diagnóstico de Dislexia en niños de 1ro y 2do grado de
-                        primaria</h1>
-                </div>
-            </div>
-            <div class="footer-center">
-                <div class="mision">
-                    <h4>Nuestra Misión</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quae laboriosam fugit
-                        doloremque quos ipsa eos vitae aliquid voluptatum necessitatibus.</p>
-                </div>
-                <div class="list">
-                    <ul>
-                        <li>Evaluaciones</li>
-                        <li>Acerca de</li>
-                        <li>Nosotros</li>
-                        <li>Contacto</li>
-                        <li>Catalógo de Instituciones</li>
-                    </ul>
-                </div>
-            </div>
-            
-        </div>
-        <hr>
-        <div class="footer-end">
-            <p>Desarrollado por Aguilar J., Daza S. y González E. <br> I.T.S de Tepexi de Rodríguez</p>
-        </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+    <?php include("template/footer.php")?>
