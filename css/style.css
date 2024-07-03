@@ -261,6 +261,8 @@ body {
     display: flex;
     align-items: center;
     height: 90vh;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .contact{
@@ -287,6 +289,10 @@ body {
 
 .form-contact{
     width: 50%;
+}
+
+.form-group{
+    margin: 1em 0;
 }
 
 .modal-content{
@@ -546,6 +552,7 @@ body {
     .cont{
         height: auto;
         margin: 4em 0;
+        width: auto;
     }
 
 }
