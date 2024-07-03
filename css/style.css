@@ -362,8 +362,15 @@ body {
 .about-section {
     background-color: #f8f9fa;
     padding: 60px 0;
+    text-align: justify;
 }
 
+.about-section p{
+    text-align: justify;
+}
+.about-section ul{
+    font-size: 1.2em;
+}
 
 .social-icons {
     margin-top: 20px;
@@ -385,7 +392,13 @@ body {
 .about-section .row.mt-5 {
     margin-top: 50px;
 }
-
+.btn-contacto {
+    background-color: #35A7FF;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
 /* Completa la palabra */
 
 .words-container{
