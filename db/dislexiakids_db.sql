@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2024 a las 18:53:15
+-- Tiempo de generación: 04-07-2024 a las 19:14:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `evaluación` (
 DROP TABLE IF EXISTS `institución`;
 CREATE TABLE IF NOT EXISTS `institución` (
   `idInstitucion` int(11) NOT NULL AUTO_INCREMENT,
+  `logo` varchar(255) NOT NULL,
   `nombre` varchar(30) DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   `numero` int(12) DEFAULT NULL,
