@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2024 a las 06:01:45
+-- Tiempo de generación: 04-07-2024 a las 19:14:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,7 +31,7 @@ USE `dislexiakids_db`;
 
 DROP TABLE IF EXISTS `evaluación`;
 CREATE TABLE IF NOT EXISTS `evaluación` (
-  `idEvaluacion` int(11) NOT NULL,
+  `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(30) DEFAULT NULL,
   `Descripción` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idEvaluacion`)
@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS `evaluación` (
 
 DROP TABLE IF EXISTS `institución`;
 CREATE TABLE IF NOT EXISTS `institución` (
-  `idInstitucion` int(11) NOT NULL,
+  `idInstitucion` int(11) NOT NULL AUTO_INCREMENT,
+  `logo` varchar(255) NOT NULL,
   `nombre` varchar(30) DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   `numero` int(12) DEFAULT NULL,
@@ -62,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `institución` (
 
 DROP TABLE IF EXISTS `pregunta`;
 CREATE TABLE IF NOT EXISTS `pregunta` (
-  `idPregunta` int(11) NOT NULL,
+  `idPregunta` int(11) NOT NULL AUTO_INCREMENT,
   `idEvaluacion` int(11) DEFAULT NULL,
   `pregunta` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`idPregunta`),
@@ -77,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `pregunta` (
 
 DROP TABLE IF EXISTS `reporte`;
 CREATE TABLE IF NOT EXISTS `reporte` (
-  `idReporte` int(11) NOT NULL,
+  `idReporte` int(11) NOT NULL AUTO_INCREMENT,
   `idEvaluacion` int(11) DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL,
   `idInstitucion` int(11) DEFAULT NULL,
@@ -97,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `reporte` (
 
 DROP TABLE IF EXISTS `respuesta`;
 CREATE TABLE IF NOT EXISTS `respuesta` (
-  `idRespuesta` int(11) NOT NULL,
+  `idRespuesta` int(11) NOT NULL AUTO_INCREMENT,
   `idPregunta` int(11) DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL,
   `respuesta` varchar(15) DEFAULT NULL,
@@ -114,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `idUsuario` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(40) DEFAULT NULL,
   `correo` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`idUsuario`)
