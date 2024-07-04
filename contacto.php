@@ -52,7 +52,7 @@
         <div class="container contact">
             <div class="info-contact">
                 <h1>Contáctanos</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, impedit enim quae vitae sequi quasi distinctio quas error esse porro?</p>
+                <p>Tu opinión es importante para nosotros. <br>Contáctanos llenando este formulario.</p>
                 <div class="img-contact">
                     <img src="images/chat.png" alt="">
                 </div>
