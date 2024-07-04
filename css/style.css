@@ -455,11 +455,13 @@ body {
 }
 
 /* Catalogo de instituciones */
+.inst{
+    margin-bottom: 3em;
+}
+
 .association-section iframe {
     width: 100%;
     max-width: 100%;
-    height: auto;
-    border: 0;
 }
 
 .association-section {

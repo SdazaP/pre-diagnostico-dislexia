@@ -11,7 +11,7 @@
 
 
     <!-- Sección: Catálogo de instituciones  -->
-    <section class="container mt-5">
+    <section class="inst container mt-5">
         
         <h2><strong>Catálogo de instituciones relacionadas al tratamiento de la dislexia</strong></h2>
 
@@ -22,10 +22,10 @@
                     echo '    <div class="row mt-4">';
                     echo '        <div class="col-md-3 text-center">';
                     echo '            <h4><strong>' . htmlspecialchars($institucion["nombre"]) . '</strong></h4>';
-                    echo '            <img src="images/otra-logo.png" alt="Logo Otra Asociación" class="img-fluid mb-3">';
+                    echo '            <img src="images/'.$institucion["logo"].' " alt="Logo Otra Asociación" class="img-fluid mb-3">';
                     
                     echo '        </div>';
-                    echo '        <div class="col-md-3">';
+                    echo '        <div class="col-md-4">';
                     echo '            <h5>Información</h5>';
                     echo '            <p>' . htmlspecialchars($institucion["descripcion"]) . '</p>';
                     echo '            <h5>Contacto</h5>';
@@ -38,7 +38,7 @@
                     echo '                <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn" class="img-fluid"></a>';
                     echo '            </div>';
                     echo '        </div>';
-                    echo '        <div class="col-md-6 text-center">';
+                    echo '        <div class="col-md-5 text-center">';
                     echo '            <h5>Ubicación</h5>';
                     echo             $institucion["ubicacion"];
                     echo '        </div>';
