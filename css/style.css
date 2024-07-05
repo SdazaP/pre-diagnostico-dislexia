@@ -197,7 +197,55 @@ body {
     text-align: center;
 }
 
-/* Carrusel */
+.eval-container{
+    width: 70%; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.eval-card{
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 0 0 2px black; 
+    margin-bottom: 15px;
+}
+
+.eval-card-img-top{
+    width: 100%;
+    max-height: 200px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0px 5px 5px -3px black;
+}
+
+.eval-card-body h3{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eval-card-body p{
+    margin-left: 25px;
+    text-align: left;
+    padding: 10px 25px 25px 25px;
+}
+
+.eval-btn {
+    width: 130px; 
+    padding: 5px 10px; 
+    float: left; 
+    margin-left: 0; 
+    margin-bottom: 50px; 
+}
+
+.ini-btn {
+    background-color: #35A7FF;
+    border-color: #35A7FF;
+}
+
+/* Carrusel 
 .container.mt-4.carrusel{
     width: 70%;
 }
@@ -245,6 +293,7 @@ body {
     background-color: grey;
     border-radius: 0 25px 25px 0;
 }
+*/
 
 /* Articulo */
 .container.mt-4.art {
@@ -472,18 +521,6 @@ body {
 /* responsive */
 
 @media (max-width: 426px) {
-    .carousel-caption h3 {
-        font-size: 4vw; 
-    }
-}
-
-@media (max-width: 426px) {
-    .titulo {
-        font-size: 2em; 
-    }
-}
-
-@media (max-width: 426px) {
     /* footer */
     .footer-head{
         display: flex;
@@ -555,7 +592,16 @@ body {
     .form-contact{
         width: 80%;
     }
-    
+
+    /* carrusel
+    .carousel-caption h3 {
+        font-size: 4vw; 
+    }
+
+    .titulo {
+        font-size: 2em; 
+    }
+    */
 }
 
 @media (max-width: 768px) {
@@ -570,10 +616,30 @@ body {
         width: auto;
     }
 
+    /* memorama */
+    .memo-cards {
+        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    }
+
+    .memory-game{
+        margin-top: -25px;
+    }
+
+    /* evaluaciones */
+
+    .eval-card-body h3{
+        font-size: 1.5rem;
+    }
+    
+    .eval-card-body p{
+        font-size: 1rem;
+        margin-left: 10px; 
+        padding: 10px;
+    }
 }
 
-/* Memorama */
 @media (max-width: 1024px) {
+    /* Memorama */
     .memo-cards {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
@@ -583,17 +649,9 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .memo-cards {
-        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-    }
-
-    .memory-game{
-        margin-top: -25px;
-    }
-}
 
 @media (max-width: 425px) {
+    /* Memorama */ 
     .memo-cards {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
@@ -602,4 +660,16 @@ body {
         margin-bottom: 25px;
         margin-top: 10px;
     }
+}
+
+.eval-card-body h3{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eval-card-body p{
+    margin-left: 25px;
+    text-align: left;
+    padding: 10px 25px 25px 25px;
 }
