@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="eval-btn">
-                <a class="btn btn-primary ini-btn" href="#" role="button">Iniciar Evaluación</a>
+                <a class="btn btn-primary ini-btn" href="prueba-registro.php" role="button">Iniciar Evaluación</a>
             </div>
         </div>
     </section>
