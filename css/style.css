@@ -667,15 +667,3 @@ body {
         margin-top: 10px;
     }
 }
-
-.eval-card-body h3{
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.eval-card-body p{
-    margin-left: 25px;
-    text-align: left;
-    padding: 10px 25px 25px 25px;
-}
