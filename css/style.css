@@ -370,8 +370,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 10px;
+    min-height: 100vh;
     margin-top: -75px;
 }
 
@@ -380,7 +379,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 15px;
     max-width: 90%; 
-    padding: 20px;
     margin: 0 auto; 
 }
 
@@ -404,6 +402,11 @@ body {
     background-color: white;
     box-shadow: 0 0 0 2px black; 
     transform: scale(0.95); 
+}
+
+.memo-card:hover{
+    transition: transform 0.2s ease;
+    transform: scale(1.05); 
 }
 
 .container.mt-4.memo {
@@ -609,6 +612,51 @@ body {
         font-size: 2em; 
     }
     */
+
+    /* Memorama */ 
+    .memo-cards {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+
+    .memory-game{
+        margin-bottom: 25px;
+        margin-top: 10px;
+        width: 90%;
+        margin-left: 7%;
+    }
+
+    .memo-card {
+        width: 125px;
+        height: 125px;
+        padding-top: 75px; 
+    }
+
+    .container.mt-4.memo {
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    /* Memorama */
+    .memo-cards {
+        grid-template-columns: repeat(2, 1fr); 
+        max-width: 350px;
+        gap: 5px;
+    }
+
+    .memory-game{
+        margin-bottom: 25px;
+        margin-top: 10px;
+        max-width: 85%;
+        margin-left: 30px;
+    }
+
+    .memo-card {
+        width: 125px;
+        height: 125px;
+        padding-top: 75px; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -628,8 +676,13 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
     }
 
-    .memory-game{
-        margin-top: -25px;
+    .memo-card:hover {
+        transform: none;
+        transition: none;
+    }
+
+    .container.mt-4.memo {
+        margin-bottom: 75px;
     }
 
     /* evaluaciones */
@@ -653,18 +706,5 @@ body {
 
     .memory-game{
         margin-top: -75px;
-    }
-}
-
-
-@media (max-width: 425px) {
-    /* Memorama */ 
-    .memo-cards {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    .memory-game{
-        margin-bottom: 25px;
-        margin-top: 10px;
     }
 }
