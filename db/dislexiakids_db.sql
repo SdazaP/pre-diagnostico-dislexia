@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2024 a las 19:14:37
+-- Tiempo de generación: 08-07-2024 a las 19:28:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `dislexiakids_db`
 --
-CREATE DATABASE IF NOT EXISTS `dislexiakids_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `dislexiakids_db`;
 
 -- --------------------------------------------------------
 
@@ -29,12 +27,10 @@ USE `dislexiakids_db`;
 -- Estructura de tabla para la tabla `evaluación`
 --
 
-DROP TABLE IF EXISTS `evaluación`;
-CREATE TABLE IF NOT EXISTS `evaluación` (
-  `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `evaluación` (
+  `idEvaluacion` int(11) NOT NULL,
   `Nombre` varchar(30) DEFAULT NULL,
-  `Descripción` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`idEvaluacion`)
+  `Descripción` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -43,17 +39,24 @@ CREATE TABLE IF NOT EXISTS `evaluación` (
 -- Estructura de tabla para la tabla `institución`
 --
 
-DROP TABLE IF EXISTS `institución`;
-CREATE TABLE IF NOT EXISTS `institución` (
-  `idInstitucion` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `institución` (
+  `idInstitucion` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
   `nombre` varchar(30) DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
-  `numero` int(12) DEFAULT NULL,
-  `correo` varchar(30) DEFAULT NULL,
-  `ubicacion` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`idInstitucion`)
+  `numero` varchar(12) DEFAULT NULL,
+  `correo` varchar(60) DEFAULT NULL,
+  `ubicacion` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `institución`
+--
+
+INSERT INTO `institución` (`idInstitucion`, `logo`, `nombre`, `descripcion`, `numero`, `correo`, `ubicacion`) VALUES
+(1, 'ubr_tepexi.jpg', 'UBR de Tepexi de Rodríguez ', 'La UBR Tepexi de Rodríguez es una área asignada para la rehabilitación biopsicosocial, con el objetivo principal de brindar a los usuarios una atención con personal capacitado para una rehabilitación total o parcial, con un trato digno y humano.', '0', '@', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242028.1317446275!2d-98.07443636231558!3d18.588029499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cf7997259fc043%3A0xbc22cb2b3aa6470b!2sUnidad%20B%C3%A1sica%20de%20Rehabilitaci%C3%B3n%20de%20Tepexi%20de%20Rodr%C3%ADguez!5e0!3m2!1ses-419!2smx!4v1720113906965!5m2!1ses-419!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(3, 'ubr_ixcaq.jpg', 'UBR Ixcaquixtla', 'Institución dedicada a proporcionar servicios de rehabilitación física a personas con discapacidad temporal o permanente. Su objetivo es mejorar la calidad de vida de sus usuarios mediante programas y tratamientos específicos que les ayuden a recuperar o ', '0', 'unidad_basica_rehabilitacion@a', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242208.21651247778!2d-98.13383102416994!3d18.460844186133503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cf7d7fca236123%3A0x25908c7d3fea6cc5!2sUBR%20Ixcaquixtla!5e0!3m2!1ses-419!2smx!4v1720115122949!5m2!1ses-419!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(4, 'ubr_ye.jpg', 'UBR Yehualtepec', 'Institución dedicada a proporcionar servicios de rehabilitación integral a personas con discapacidad temporal o permanente. Su misión es mejorar la calidad de vida de sus usuarios mediante programas y tratamientos que les ayuden a recuperar o mantener sus', '0', '@', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d261246.1011642175!2d-97.9229729476441!3d18.691206407359164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c57b9dd27f9a2b%3A0x9fd154c59443b7bf!2sUBR%2C%20Unidad%20B%C3%A1sica%20de%20Rehabilitaci%C3%B3n%20Yehualtepec!5e0!3m2!1ses-419!2smx!4v1720115716450!5m2!1ses-419!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>');
 
 -- --------------------------------------------------------
 
@@ -61,13 +64,10 @@ CREATE TABLE IF NOT EXISTS `institución` (
 -- Estructura de tabla para la tabla `pregunta`
 --
 
-DROP TABLE IF EXISTS `pregunta`;
-CREATE TABLE IF NOT EXISTS `pregunta` (
-  `idPregunta` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pregunta` (
+  `idPregunta` int(11) NOT NULL,
   `idEvaluacion` int(11) DEFAULT NULL,
-  `pregunta` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`idPregunta`),
-  KEY `idEvaluacion` (`idEvaluacion`)
+  `pregunta` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -76,19 +76,23 @@ CREATE TABLE IF NOT EXISTS `pregunta` (
 -- Estructura de tabla para la tabla `reporte`
 --
 
-DROP TABLE IF EXISTS `reporte`;
-CREATE TABLE IF NOT EXISTS `reporte` (
-  `idReporte` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reporte` (
+  `idReporte` int(11) NOT NULL,
   `idEvaluacion` int(11) DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL,
   `idInstitucion` int(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `resultado` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`idReporte`),
-  KEY `idEvaluacion` (`idEvaluacion`),
-  KEY `idUsuario` (`idUsuario`),
-  KEY `idInstitucion` (`idInstitucion`)
+  `tiempo` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `reporte`
+--
+
+INSERT INTO `reporte` (`idReporte`, `idEvaluacion`, `idUsuario`, `idInstitucion`, `fecha`, `resultado`, `tiempo`) VALUES
+(8, NULL, NULL, NULL, NULL, NULL, '00:38'),
+(9, NULL, NULL, NULL, NULL, NULL, '00:22');
 
 -- --------------------------------------------------------
 
@@ -96,15 +100,11 @@ CREATE TABLE IF NOT EXISTS `reporte` (
 -- Estructura de tabla para la tabla `respuesta`
 --
 
-DROP TABLE IF EXISTS `respuesta`;
-CREATE TABLE IF NOT EXISTS `respuesta` (
-  `idRespuesta` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `respuesta` (
+  `idRespuesta` int(11) NOT NULL,
   `idPregunta` int(11) DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL,
-  `respuesta` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`idRespuesta`),
-  KEY `idPregunta` (`idPregunta`),
-  KEY `idUsuario` (`idUsuario`)
+  `respuesta` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -113,13 +113,97 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuario` (
+  `idUsuario` int(11) NOT NULL,
   `nombre` varchar(40) DEFAULT NULL,
-  `correo` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`idUsuario`)
+  `correo` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `evaluación`
+--
+ALTER TABLE `evaluación`
+  ADD PRIMARY KEY (`idEvaluacion`);
+
+--
+-- Indices de la tabla `institución`
+--
+ALTER TABLE `institución`
+  ADD PRIMARY KEY (`idInstitucion`);
+
+--
+-- Indices de la tabla `pregunta`
+--
+ALTER TABLE `pregunta`
+  ADD PRIMARY KEY (`idPregunta`),
+  ADD KEY `idEvaluacion` (`idEvaluacion`);
+
+--
+-- Indices de la tabla `reporte`
+--
+ALTER TABLE `reporte`
+  ADD PRIMARY KEY (`idReporte`),
+  ADD KEY `idEvaluacion` (`idEvaluacion`),
+  ADD KEY `idUsuario` (`idUsuario`),
+  ADD KEY `idInstitucion` (`idInstitucion`);
+
+--
+-- Indices de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  ADD PRIMARY KEY (`idRespuesta`),
+  ADD KEY `idPregunta` (`idPregunta`),
+  ADD KEY `idUsuario` (`idUsuario`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`idUsuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `evaluación`
+--
+ALTER TABLE `evaluación`
+  MODIFY `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `institución`
+--
+ALTER TABLE `institución`
+  MODIFY `idInstitucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `pregunta`
+--
+ALTER TABLE `pregunta`
+  MODIFY `idPregunta` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `reporte`
+--
+ALTER TABLE `reporte`
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
