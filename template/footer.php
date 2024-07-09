@@ -13,8 +13,7 @@
             <div class="footer-center">
                 <div class="mision">
                     <h4>Nuestra Misión</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quae laboriosam fugit
-                        doloremque quos ipsa eos vitae aliquid voluptatum necessitatibus.</p>
+                    <p>Brindar un diagnóstico temprano y preciso de dislexia en niños, permitiendo una intervención oportuna que facilite su proceso de aprendizaje y mejore su calidad de vida.</p>
                 </div>
                 <div class="list">
                     <ul>
@@ -26,7 +25,7 @@
                     </ul>
                 </div>
             </div>
-            
+
         </div>
         <hr>
         <div class="footer-end">
@@ -39,6 +38,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    </body>
 
-</html>
+    </html>
