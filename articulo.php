@@ -178,7 +178,7 @@
         <h1>Referencias</h1>
         <ul class="list">
             <li>
-                GUÍA GENERAL SOBRE DISLEXIA 2.010 ASOCIACIÓN ANDALUZA DE DISLEXIA (ASANDIS). (n.d.). https://www.disfam.org/wp-content/uploads/2017/03/guia-general-sobre-dislexia-andalucia.pdf         
+                Artiz, L. (2020). Ni escriben al revés ni son niños “tontos” o vagos. Diez falsos mitos sobre la dislexia. Uoc.edu; Universitat Oberta de Catalunya. https://www.uoc.edu/es/news/2020/410-10-falsos-mitos-sobre-dislexia       
             </li>
         </ul>
     </section>

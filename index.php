@@ -15,7 +15,7 @@
                 <h1>¿Qué es la Dislexia?</h1>
                 <p style="text-align: justify;">Es una dificultad de aprendizaje que se manifiesta en dificultades de acceso al léxico, y puede estar causada por una combinación de déficit en el procesamiento fonológico, auditivo, y/o visual. 
                 <br>
-                Asimismo, se suele acompañar de problemas relacionados con un funcionamiento deficiente de la memoria de trabajo, deficiencias en el conocimiento sintáctico, y problemas de velocidad de procesamiento. <br> <br> (GUÍA GENERAL SOBRE DISLEXIA 2.010 ASOCIACIÓN ANDALUZA de DISLEXIA (ASANDIS), n.d.)</p>
+                Asimismo, se suele acompañar de problemas relacionados con un funcionamiento deficiente de la memoria de trabajo, deficiencias en el conocimiento sintáctico, y problemas de velocidad de procesamiento. <br> <br> (ASANDIS, 2017)</p>
                 <a class="btn btn-primary btn-learn-more" href="articulo.php" role="button">Aprende más</a>
             </div>
         </div>
@@ -47,7 +47,8 @@
                 <ul class="card-text lista">
                     <li>Desinterés por el estudio</li>
                     <li>Calificaciones escolares bajas</li>
-                    <li>marginados del grupo</li>
+                    <li>Marginados del grupo</li>
+                    <li>Inseguridad</li>
                 </ul>
             </div>
         </div>
@@ -66,7 +67,7 @@
                         <li>Los disléxicos tienen un cociente intelectual algo más bajo</li>
                         <li>Los niños bilingües no pueden tener dislexia</li>
                     </ul>
-                    <p>(Leyre Artiz Elkarte, 2020)</p>
+                    <p>(Artiz, 2020)</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -81,10 +82,10 @@
         <h1>Referencias</h1>
         <ul class="list">
             <li>
-                GUÍA GENERAL SOBRE DISLEXIA 2.010 ASOCIACIÓN ANDALUZA DE DISLEXIA (ASANDIS). (n.d.). https://www.disfam.org/wp-content/uploads/2017/03/guia-general-sobre-dislexia-andalucia.pdf         
+                ASANDIS. (2017). https://www.disfam.org/wp-content/uploads/2017/03/guia-general-sobre-dislexia-andalucia.pdf         
             </li>
             <li>
-                Leyre Artiz Elkarte. (2020, November 2). Ni escriben al revés ni son niños “tontos” o vagos. Diez falsos mitos sobre la dislexia. Uoc.edu; Universitat Oberta de Catalunya. https://www.uoc.edu/es/news/2020/410-10-falsos-mitos-sobre-dislexia
+            Artiz, L. (2020). Ni escriben al revés ni son niños “tontos” o vagos. Diez falsos mitos sobre la dislexia. Uoc.edu; Universitat Oberta de Catalunya. https://www.uoc.edu/es/news/2020/410-10-falsos-mitos-sobre-dislexia    
             </li>
         </ul>
     </section>
