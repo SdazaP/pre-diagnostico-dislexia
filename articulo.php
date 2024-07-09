@@ -165,8 +165,6 @@
         <p>Es recomendable diagnosticar las dificultades de aprendizaje lo antes posible para acceder a la ayuda adecuada y aumentar las posibilidades de superar las dificultades. Los padres deben confiar en su intuición y buscar evaluaciones profesionales si sospechan problemas educativos.</p>
         <p>Crear un ambiente seguro y positivo en casa es crucial, especialmente porque la escuela puede resultar desalentadora para el niño. Fomentar cualquier talento especial del niño y elogiar sus logros son estrategias importantes para construir su autoestima.
         </p>
-        <p>Es importante también involucrar al niño en las conversaciones sobre sus dificultades de aprendizaje de manera positiva y constructiva, y buscar apoyo en grupos de padres y organizaciones que puedan ofrecer información útil y apoyo emocional.
-        </p>
         <p>Los padres de niños disléxicos, harían bien en averiguar qué grupos de
             apoyo y otras organizaciones relevantes se encuentran en su zona. A veces es un
             alivio ver que su familia no es la única que sobrelleva la vida con un hijo con
