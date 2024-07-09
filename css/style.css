@@ -552,6 +552,11 @@ body {
         margin: 0 0 2em 0;
     }
 
+    /* articulo */
+    .titulo{
+        font-size: 2em;
+    }
+
     /* footer */
     .footer-head{
         display: flex;
