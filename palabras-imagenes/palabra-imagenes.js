@@ -67,4 +67,4 @@ function capturarResultadoTest3() {
     });
 }
 
-finalizeButton.addEventListener('click', capturarResultadoTest3);
+document.getElementById('finalizeButton').addEventListener('click', capturarResultadoTest3);

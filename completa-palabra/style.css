@@ -91,7 +91,7 @@
     background-color: #FF6347;
 }
 
-#finalizeButton {
+.sig-btn {
     margin-top: 20px;
     padding: 12px 24px;
     font-size: 1.2em;
@@ -103,9 +103,13 @@
     transition: background-color 0.3s, transform 0.2s;
 }
 
-#finalizeButton:hover {
+.sig-btn:hover {
     background-color: #2A95E0;
     transform: translateY(-2px);
+}
+
+.link-no-underline {
+    text-decoration: none;
 }
 
 .siguiente-btn {

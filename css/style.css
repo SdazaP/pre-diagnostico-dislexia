@@ -227,6 +227,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 0 2px black; 
     margin-bottom: 15px;
+    min-height: 600px;
 }
 
 .eval-card-img-top{
@@ -247,6 +248,7 @@ body {
     margin-left: 25px;
     text-align: left;
     padding: 10px 25px 25px 25px;
+    font-size: 1em;
 }
 
 .eval-btn {
@@ -431,6 +433,17 @@ body {
 
 .container.mt-4.memo .text-center h1 {
     text-align: center;
+}
+
+.div-btn-sig{
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-top: -50px;
+}
+
+.sig-btn{
+    width: 100px;
 }
 
 /* acerca-de */

@@ -74,6 +74,19 @@ button {
     margin-top: 20px;
 }
 
+.sig-btn{
+    padding: 10px 20px;
+    background-color: #35A7FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.link-no-underline {
+    text-decoration: none;
+}
 
 
 @media (max-width: 768px) {

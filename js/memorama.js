@@ -1,4 +1,5 @@
-const cardsArray = ['images/Logo.png', 'images/check.png', 'images/consecuencias.jpeg', 'images/mitos.jpeg', 'images/chat.png'];
+const cardsArray = ['images/helicoptero.png', 'images/jirafa.png', 'images/cangrejo.png', 'images/pelota.png', 'images/zapato.png'];
+const divParaActivar = document.getElementById('div-btn-sig');
 let chosenCards = [];
 let matchedCards = [];
 
@@ -53,6 +54,7 @@ function checkForMatch() {
 
     if (matchedCards.length === cardsArray.length * 2) {
         mostrarModalDeGanador();
+        divParaActivar.style.display = 'flex';
     }
 }
 
