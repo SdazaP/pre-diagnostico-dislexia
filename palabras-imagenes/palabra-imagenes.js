@@ -34,7 +34,7 @@ function nextSection(sectionId) {
     document.getElementById(sectionId).style.display = 'block';
 }
 
-function finalize() {
+function capturarResultadoTest3() {
     const results = [
         { dropzone: 'dropzone1', correctWord: 'paleta' },
         { dropzone: 'dropzone2', correctWord: 'camisa' },
@@ -60,5 +60,11 @@ function finalize() {
         }
     });
 
-    alert(`Has acertado ${correctCount} de ${results.length} respuestas.`);
+    resultados.push({
+        test: 3,
+        correct: correctCount,
+        incorrect: results.length - correctCount
+    });
 }
+
+finalizeButton.addEventListener('click', capturarResultadoTest3);

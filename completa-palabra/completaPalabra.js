@@ -1,6 +1,5 @@
 const syllables = document.querySelectorAll('.syllable');
 const dropzones = document.querySelectorAll('.word-slot');
-const finalizeButton = document.getElementById('finalizeButton');
 
 syllables.forEach(syllable => {
     syllable.addEventListener('dragstart', dragStart);
@@ -34,7 +33,7 @@ function nextSection(sectionId) {
     document.getElementById(sectionId).style.display = 'block';
 }
 
-function finalize() {
+function capturarResultadoTest4() {
     const results = [
         { dropzone: 'dropzone1', correctSyllable: 'pa' },
         { dropzone: 'dropzone2', correctSyllable: 'mi' },
@@ -60,5 +59,13 @@ function finalize() {
         }
     });
 
-    alert(`Has acertado ${correctCount} de ${results.length} respuestas.`);
+    resultados.push({
+        test: 4,
+        correct: correctCount,
+        incorrect: results.length - correctCount
+    });
+
+    enviarResultados();
 }
+
+document.getElementById('finalizeButton').addEventListener('click', capturarResultadoTest4);
