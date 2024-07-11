@@ -18,7 +18,7 @@
 
     <!-- Barra de Navegación -->
     <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container">
+        <div class="contt">
             <a class="navbar-brand" href="#">
                 <img src="images/Logo.png" alt="Logo">
             </a>

@@ -13,7 +13,6 @@ body {
 
 /* Navbar */
 
-
 .navbar-brand img {
     width: 70px;
     height: auto;
@@ -40,10 +39,10 @@ body {
 }
 /* ¿Qué es dislexia */
 .container h1, .container p {
-    text-align: left;
+    text-align: justify;
 }
 
-.container h1 {
+h1 {
     font-weight: bold;
     margin: 0 0 1em 0;
 }
@@ -245,8 +244,7 @@ body {
 }
 
 .eval-card-body p{
-    margin-left: 25px;
-    text-align: left;
+    text-align: justify;
     padding: 10px 25px 25px 25px;
     font-size: 1em;
 }
@@ -380,6 +378,18 @@ body {
     width: 60%;
     margin: 0 auto;
     font-weight: bold;
+}
+/* Navbar contacto */
+
+.contt{
+    display: flex;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.nav-link:hover{
+    color: #000000;
 }
 
 /* Memorama */
@@ -642,6 +652,31 @@ body {
         width: 80%;
     }
 
+    .contt{
+        flex-wrap: inherit;
+        align-items: center;
+        justify-content: space-between;
+        width: 93%;
+    }
+    /* evauaciones */
+    .eval{
+        padding: 0 45px;
+    }
+    .col-md-6 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* catalogo instituciones */
+    .inst{
+        padding: 0 45px;
+    }
+
+    /* Acerca de */
+    .about-section{
+        padding: 60px 40px;
+    }
+
     /* carrusel
     .carousel-caption h3 {
         font-size: 4vw; 
@@ -732,8 +767,7 @@ body {
     
     .eval-card-body p{
         font-size: 1rem;
-        margin-left: 10px; 
-        padding: 10px;
+        padding: 20px;
     }
 }
 

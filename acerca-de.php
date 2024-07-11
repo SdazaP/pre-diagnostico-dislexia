@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h2>Acerca de Nosotros</h2>
+                    <h1>Acerca de Nosotros</h1>
                     <p>Somos un proyecto dedicado a proporcionar herramientas y recursos para el pre-diagnóstico de dislexia en niños de 1º y 2º grado de primaria. Nuestro objetivo es identificar posibles dificultades en el aprendizaje de la lectura y la escritura de manera temprana para ofrecer apoyo y orientación a los padres y educadores.</p>
                 </div>
                 <div class="col-md-4 text-center">

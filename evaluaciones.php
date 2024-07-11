@@ -3,7 +3,10 @@
 <section class="container mt-4 eval">
     <div class="text-center">
         <h1>Evaluaciones</h1>
-        <p>Bienvenido a nuestra sección de evaluación para la detección de dislexia en niños de primero y segundo grado. Dislexia Kids ofrece una serie de pruebas diseñadas para identificar posibles signos de dislexia de manera temprana y precisa. Las pruebas están especialmente adaptadas para ser amigables y comprensibles para los niños. Cada prueba está diseñada cuidadosamente para proporcionar resultados útiles que pueden indicar la necesidad de una evaluación más profunda por parte de profesionales de la salud especializados en dislexia.</p>
+        <p>Bienvenido a nuestra sección de evaluación para la detección de dislexia en niños de primero y segundo grado. Dislexia Kids ofrece una serie de pruebas diseñadas para identificar posibles signos de dislexia de manera temprana y precisa. 
+        <br>
+        <br>
+        Las pruebas están especialmente adaptadas para ser amigables y comprensibles para los niños. Cada prueba está diseñada cuidadosamente para proporcionar resultados útiles que pueden indicar la necesidad de una evaluación más profunda por parte de profesionales de la salud especializados en dislexia.</p>
     </div>
 </section>
 
