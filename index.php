@@ -8,18 +8,23 @@
     <!-- Sección: ¿Qué es la Dislexia?  -->
     <section class="container mt-4 qdislexia">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
                 <img src="images/dislexia.png" alt="Imagen sobre dislexia" class="info-image img-fluid">
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
                 <h1>¿Qué es la Dislexia?</h1>
-                <p style="text-align: justify;">Es una dificultad de aprendizaje que se manifiesta en dificultades de acceso al léxico, y puede estar causada por una combinación de déficit en el procesamiento fonológico, auditivo, y/o visual. 
-                <br>
-                Asimismo, se suele acompañar de problemas relacionados con un funcionamiento deficiente de la memoria de trabajo, deficiencias en el conocimiento sintáctico, y problemas de velocidad de procesamiento. <br> <br> (ASANDIS, 2017)</p>
+                <p style="text-align: justify;">
+                    Es una dificultad de aprendizaje que se manifiesta en dificultades de acceso al léxico, y puede estar causada por una combinación de déficit en el procesamiento fonológico, auditivo, y/o visual. 
+                    <br>
+                    Asimismo, se suele acompañar de problemas relacionados con un funcionamiento deficiente de la memoria de trabajo, deficiencias en el conocimiento sintáctico, y problemas de velocidad de procesamiento. 
+                    <br><br> 
+                    (ASANDIS, 2017)
+                </p>
                 <a class="btn btn-primary btn-learn-more" href="articulo.php" role="button">Aprende más</a>
             </div>
         </div>
     </section>
+
 
     <!-- Sección Causas y Consecuencias de Dislexia  -->
     <section class="container section text-white caucons">

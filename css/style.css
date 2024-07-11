@@ -38,7 +38,7 @@ body {
     border-radius: 12px; 
 }
 /* ¿Qué es dislexia */
-.container h1, .container p {
+.container p {
     text-align: justify;
 }
 
@@ -123,8 +123,8 @@ h1 {
     width: 90%;
     height: auto;
     border-radius: 10px;
-    margin-left: 10px;
 }
+
 .mitos h2{
     text-align: left;
     font-weight: bold;
@@ -587,6 +587,29 @@ h1 {
     /* index */
     .caus-cont{
         margin: 0 0 2em 0;
+    }
+
+    .qdislexia{
+        padding: 0 45px;
+    }
+    
+    .qdislexia h1{
+        text-align: center;
+        font-size: 2.1rem;
+    }
+
+    .info-image{
+        width: 70%; 
+        text-align: center;
+    }
+
+    .mitos{
+        padding: 0 45px;
+    }
+
+    .ref{
+        padding: 0 45px;
+        font-size: .7em;
     }
 
     /* articulo */
