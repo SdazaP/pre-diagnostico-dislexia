@@ -57,98 +57,105 @@
             niño en cada momento podrán relajarse y atenderlo en lo que más le convenga. Con
             un disléxico hay que aprender a convivir.</p>
         <br>
-        <ul>
-            <li> Ayudarle a organizar el orden del trabajo a desarrollar (empezar con las
-                asignaturas de dificultad superior, después las más sencillas para él y,
-                finalmente, las más mecánicas). Tener siempre en cuenta:
-                <ul>
-                    <li>
-                        Lo que es para el día siguiente y lo que no.
-                    </li>
-                    Las tareas que en los siguientes días no se podrán hacer por
-                    causa de las extraescolares.
-                    <li>
-                        Los exámenes programados (nunca se pueden dejar para el
-                        último día, porque carecen de memoria a corto plazo).
-                    </li>
-                    <li>
-                        Las tareas de larga duración (lectura de libros, trabajos, etc.).
-                    </li>
-                </ul>
-            </li>
-            <li>Dejarle solo en lo que pueda hacer de manera autónoma, pero estar a su
-                lado en lo que no. Tiene que saber que estamos ahí, por si nos necesita.
-            </li>
-            <li>
-                Cuando el niño está agotado, y es evidente que no rinde, tomarle el lápiz y
-                continuar escribiendo (él nos dicta y nosotros transcribimos). A esto se lo
-                conoce como “hacer de secretario”.
-            </li>
-            <li>
-                Cuando ni así dé resultado, poner una nota al profesor que, previamente
-                informado del problema, tendrá que aceptar nuestra decisión de terminar con
-                los deberes del día.
-                No dudar de poner notas justificativas cuando alguna tarea es inasequible o
-                absurda para él (lecturas largas con poco tiempo, copiar lecciones, copiar
-                reiterativamente palabras erróneas, etc.) o, si sabemos que le acarrearía
-                consecuencias indeseadas, hacérsela directamente nosotros.
-            </li>
-            <li>
-                Leer con él los libros y otras tareas que le han dado, o leérselos
-                directamente. Es importante que aprenda y se entere de lo que lee, por lo
-                tanto habrá que explicarle el significado de las palabras nuevas y lo que está
-                pasando en el texto.
-            </li>
-            <li>
-                Si resulta demasiado complicado utilizar diccionarios y agendas
-                convencionales o si se pierde demasiado tiempo, habrá que explorar y
-                enseñarle a utilizar instrumentos electrónicos como las agendas electrónicas
-                y los correctores de ortografía o los diccionarios y los calendarios
-                informáticos.
-            </li>
-            <li>
-                La actitud de los padres debe basarse en el sentido común. Si el niño hace
-                una pregunta sobre ortografía o gramática cuando está escribiendo, se le da
-                la respuesta y que siga con su tarea. Esto también es válido para las
-                matemáticas; los niños disléxicos a menudo tienen problemas con la memoria
-                repetitiva. Mejor darle la respuesta si se ve que el niño sabe hacer el cálculo.
-            </li>
-        </ul>
+        <div class="lista-art">
+            <ul>
+                <li> Ayudarle a organizar el orden del trabajo a desarrollar (empezar con las
+                    asignaturas de dificultad superior, después las más sencillas para él y,
+                    finalmente, las más mecánicas). Tener siempre en cuenta:
+                    <ul>
+                        <li>
+                            Lo que es para el día siguiente y lo que no.
+                        </li>
+                        <li>
+                            Las tareas que en los siguientes días no se podrán hacer por
+                            causa de las extraescolares.
+                        </li>
+                        <li>
+                            Los exámenes programados (nunca se pueden dejar para el
+                            último día, porque carecen de memoria a corto plazo).
+                        </li>
+                        <li>
+                            Las tareas de larga duración (lectura de libros, trabajos, etc.).
+                        </li>
+                    </ul>
+                </li>
+                <li>Dejarle solo en lo que pueda hacer de manera autónoma, pero estar a su
+                    lado en lo que no. Tiene que saber que estamos ahí, por si nos necesita.
+                </li>
+                <li>
+                    Cuando el niño está agotado, y es evidente que no rinde, tomarle el lápiz y
+                    continuar escribiendo (él nos dicta y nosotros transcribimos). A esto se lo
+                    conoce como “hacer de secretario”.
+                </li>
+                <li>
+                    Cuando ni así dé resultado, poner una nota al profesor que, previamente
+                    informado del problema, tendrá que aceptar nuestra decisión de terminar con
+                    los deberes del día.
+                    No dudar de poner notas justificativas cuando alguna tarea es inasequible o
+                    absurda para él (lecturas largas con poco tiempo, copiar lecciones, copiar
+                    reiterativamente palabras erróneas, etc.) o, si sabemos que le acarrearía
+                    consecuencias indeseadas, hacérsela directamente nosotros.
+                </li>
+                <li>
+                    Leer con él los libros y otras tareas que le han dado, o leérselos
+                    directamente. Es importante que aprenda y se entere de lo que lee, por lo
+                    tanto habrá que explicarle el significado de las palabras nuevas y lo que está
+                    pasando en el texto.
+                </li>
+                <li>
+                    Si resulta demasiado complicado utilizar diccionarios y agendas
+                    convencionales o si se pierde demasiado tiempo, habrá que explorar y
+                    enseñarle a utilizar instrumentos electrónicos como las agendas electrónicas
+                    y los correctores de ortografía o los diccionarios y los calendarios
+                    informáticos.
+                </li>
+                <li>
+                    La actitud de los padres debe basarse en el sentido común. Si el niño hace
+                    una pregunta sobre ortografía o gramática cuando está escribiendo, se le da
+                    la respuesta y que siga con su tarea. Esto también es válido para las
+                    matemáticas; los niños disléxicos a menudo tienen problemas con la memoria
+                    repetitiva. Mejor darle la respuesta si se ve que el niño sabe hacer el cálculo.
+                </li>
+            </ul>
+        </div>
         <h3 class="subtitulo">Su papel en la escuela</h3>
         <br>
         <p>En este aspecto, habría muchas cosas a decir, pero quizá lo más importante
             sería:</p>
-        <ul>
-            <li>
-                Prepare una lista de las recomendaciones del psicopedagogo
-                y entregue
-                una copia a cada profesor de su hijo; de esta manera tendrá la certeza de que
-                todos están debidamente informados.
-            </li>
-            <li>
-                Mantenga un contacto regular con los profesores. Intente lograr que
-                familiaricen a los compañeros de su hijo con lo que significa ser disléxico y
-                que les expliquen cómo pueden ayudar. Hágalo Vd. mismo con los amigos del
-                niño y con sus familias.
-            </li>
-            <li>
-                Utilice códigos de color para marcar todos los libros y bolsas, así su hijo los
-                reconocerá inmediatamente.
-            </li>
-            <li>
-                Procure que todo su material escolar esté siempre preparado y ordenado en
-                el mismo lugar.
-            </li>
-            <li>
-                Enséñele a su hijo a preparar y vaciar su cartera y a organizar su estuche
-                de lápices. No dé por sentado que adquirirá estas aptitudes por sí mismo.
-            </li>
-            <li>
-                Mantenga un registro del tiempo que dedica su hijo a hacer sus deberes y
-                comparta esta información con el profesor ya que posiblemente no esté al
-                corriente del tiempo que necesita.
-            </li>
-        </ul>
+        <div class="lista-art">
+            <ul>
+                <li>
+                    Prepare una lista de las recomendaciones del psicopedagogo
+                    y entregue
+                    una copia a cada profesor de su hijo; de esta manera tendrá la certeza de que
+                    todos están debidamente informados.
+                </li>
+                <li>
+                    Mantenga un contacto regular con los profesores. Intente lograr que
+                    familiaricen a los compañeros de su hijo con lo que significa ser disléxico y
+                    que les expliquen cómo pueden ayudar. Hágalo Vd. mismo con los amigos del
+                    niño y con sus familias.
+                </li>
+                <li>
+                    Utilice códigos de color para marcar todos los libros y bolsas, así su hijo los
+                    reconocerá inmediatamente.
+                </li>
+                <li>
+                    Procure que todo su material escolar esté siempre preparado y ordenado en
+                    el mismo lugar.
+                </li>
+                <li>
+                    Enséñele a su hijo a preparar y vaciar su cartera y a organizar su estuche
+                    de lápices. No dé por sentado que adquirirá estas aptitudes por sí mismo.
+                </li>
+                <li>
+                    Mantenga un registro del tiempo que dedica su hijo a hacer sus deberes y
+                    comparta esta información con el profesor ya que posiblemente no esté al
+                    corriente del tiempo que necesita.
+                </li>
+            </ul>
+        </div>
+
         <br>
         <h3 class="subtitulo">Su necesidad de un entorno seguro y estable</h3>
         <br>
@@ -175,12 +182,12 @@
 </section>
 
 <section class="container ref">
-        <h1>Referencias</h1>
-        <ul class="list">
-            <li>
-                Artiz, L. (2020). Ni escriben al revés ni son niños “tontos” o vagos. Diez falsos mitos sobre la dislexia. Uoc.edu; Universitat Oberta de Catalunya. https://www.uoc.edu/es/news/2020/410-10-falsos-mitos-sobre-dislexia       
-            </li>
-        </ul>
-    </section>
+    <h1>Referencias</h1>
+    <ul class="list-art">
+        <li>
+            Artiz, L. (2020). Ni escriben al revés ni son niños “tontos” o vagos. Diez falsos mitos sobre la dislexia. Uoc.edu; Universitat Oberta de Catalunya. https://www.uoc.edu/es/news/2020/410-10-falsos-mitos-sobre-dislexia
+        </li>
+    </ul>
+</section>
 
 <?php include("template/footer.php") ?>

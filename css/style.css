@@ -319,8 +319,22 @@ body {
     margin-bottom: 50px;
 }
 
+.container.mt-4.art p{
+    text-align: justify;
+}
+
 .titulo{
     font-size: 2.5em;
+}
+
+.lista-art > ul > li {
+    font-size: 1.2em; 
+    text-align: justify;
+}
+
+.lista-art > ul > li > ul > li:not(:after) {
+    font-size: 1.2em; 
+    text-align: justify;
 }
 
 /* Formulario de contacto */
