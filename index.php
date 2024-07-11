@@ -9,7 +9,7 @@
     <section class="container mt-4 qdislexia">
         <div class="row">
             <div class="col-md-4">
-                <img src="images/que es la dislexia.png" alt="Imagen sobre dislexia" class="info-image img-fluid">
+                <img src="images/dislexia.png" alt="Imagen sobre dislexia" class="info-image img-fluid">
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
                 <h1>¿Qué es la Dislexia?</h1>
