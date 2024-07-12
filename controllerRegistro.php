@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($usuarioExistente) {
         // El correo ya está registrado, mostrar el modal
-        $error_message = "Usuario ya registrado";
+        $error_message = "Usuario ya registrado, por favor revisa tu correo para ver tus resultados";
 
        
         

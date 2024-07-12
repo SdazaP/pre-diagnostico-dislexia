@@ -393,6 +393,10 @@ h1 {
     margin: 0 auto;
     font-weight: bold;
 }
+
+.modal-body p{
+    text-align: justify;
+}
 /* Navbar contacto */
 
 .contt{
