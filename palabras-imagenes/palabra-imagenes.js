@@ -58,13 +58,28 @@ function capturarResultadoTest3() {
         } else {
             dropzone.classList.add('incorrect');
         }
+
+        const resultados = {
+            test: 3,
+            correct: correctCount,
+        }
+
+        fetch('../guardar_resultados.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(resultados)
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Respuesta del servidor:', data);
+            })
+            .catch(error => {
+                console.error('Error al enviar los resultados:', error);
+            });
     });
 
-    resultados.push({
-        test: 3,
-        correct: correctCount,
-        incorrect: results.length - correctCount
-    });
 }
 
 document.getElementById('finalizeButton').addEventListener('click', capturarResultadoTest3);

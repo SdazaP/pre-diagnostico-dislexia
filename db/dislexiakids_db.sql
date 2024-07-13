@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-07-2024 a las 19:28:45
+-- Tiempo de generación: 13-07-2024 a las 16:06:51
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -33,6 +33,16 @@ CREATE TABLE `evaluación` (
   `Descripción` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `evaluación`
+--
+
+INSERT INTO `evaluación` (`idEvaluacion`, `Nombre`, `Descripción`) VALUES
+(1, 'Memorama', NULL),
+(2, 'Patrones Figuras', NULL),
+(3, 'Palabra-Imagen', NULL),
+(4, 'Completa Palabra', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -61,18 +71,6 @@ INSERT INTO `institución` (`idInstitucion`, `logo`, `nombre`, `descripcion`, `n
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pregunta`
---
-
-CREATE TABLE `pregunta` (
-  `idPregunta` int(11) NOT NULL,
-  `idEvaluacion` int(11) DEFAULT NULL,
-  `pregunta` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `reporte`
 --
 
@@ -80,31 +78,13 @@ CREATE TABLE `reporte` (
   `idReporte` int(11) NOT NULL,
   `idEvaluacion` int(11) DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL,
-  `idInstitucion` int(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
+  `prueba1` varchar(30) NOT NULL,
+  `prueba2` varchar(30) NOT NULL,
+  `prueba3` varchar(30) NOT NULL,
+  `prueba4` varchar(30) NOT NULL,
   `resultado` varchar(255) DEFAULT NULL,
   `tiempo` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `reporte`
---
-
-INSERT INTO `reporte` (`idReporte`, `idEvaluacion`, `idUsuario`, `idInstitucion`, `fecha`, `resultado`, `tiempo`) VALUES
-(8, NULL, NULL, NULL, NULL, NULL, '00:38'),
-(9, NULL, NULL, NULL, NULL, NULL, '00:22');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `respuesta`
---
-
-CREATE TABLE `respuesta` (
-  `idRespuesta` int(11) NOT NULL,
-  `idPregunta` int(11) DEFAULT NULL,
-  `idUsuario` int(11) DEFAULT NULL,
-  `respuesta` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -136,27 +116,11 @@ ALTER TABLE `institución`
   ADD PRIMARY KEY (`idInstitucion`);
 
 --
--- Indices de la tabla `pregunta`
---
-ALTER TABLE `pregunta`
-  ADD PRIMARY KEY (`idPregunta`),
-  ADD KEY `idEvaluacion` (`idEvaluacion`);
-
---
 -- Indices de la tabla `reporte`
 --
 ALTER TABLE `reporte`
   ADD PRIMARY KEY (`idReporte`),
   ADD KEY `idEvaluacion` (`idEvaluacion`),
-  ADD KEY `idUsuario` (`idUsuario`),
-  ADD KEY `idInstitucion` (`idInstitucion`);
-
---
--- Indices de la tabla `respuesta`
---
-ALTER TABLE `respuesta`
-  ADD PRIMARY KEY (`idRespuesta`),
-  ADD KEY `idPregunta` (`idPregunta`),
   ADD KEY `idUsuario` (`idUsuario`);
 
 --
@@ -173,7 +137,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `evaluación`
 --
 ALTER TABLE `evaluación`
-  MODIFY `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `institución`
@@ -182,53 +146,27 @@ ALTER TABLE `institución`
   MODIFY `idInstitucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `pregunta`
---
-ALTER TABLE `pregunta`
-  MODIFY `idPregunta` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT de la tabla `respuesta`
---
-ALTER TABLE `respuesta`
-  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `pregunta`
---
-ALTER TABLE `pregunta`
-  ADD CONSTRAINT `pregunta_ibfk_1` FOREIGN KEY (`idEvaluacion`) REFERENCES `evaluación` (`idEvaluacion`);
-
---
 -- Filtros para la tabla `reporte`
 --
 ALTER TABLE `reporte`
   ADD CONSTRAINT `reporte_ibfk_1` FOREIGN KEY (`idEvaluacion`) REFERENCES `evaluación` (`idEvaluacion`),
-  ADD CONSTRAINT `reporte_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`),
-  ADD CONSTRAINT `reporte_ibfk_3` FOREIGN KEY (`idInstitucion`) REFERENCES `institución` (`idInstitucion`);
-
---
--- Filtros para la tabla `respuesta`
---
-ALTER TABLE `respuesta`
-  ADD CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`idPregunta`) REFERENCES `pregunta` (`idPregunta`),
-  ADD CONSTRAINT `respuesta_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
+  ADD CONSTRAINT `reporte_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

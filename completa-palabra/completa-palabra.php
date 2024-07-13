@@ -1,3 +1,5 @@
+<?php include("../guardar_resultados.php")?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -255,7 +257,7 @@
                     <img src="../images/pelota.png" alt="Imagen Ejercicio 10">
                 </div>
             </div>
-            <a id="finalizeButton" class="sig-btn link-no-underline" href="../reporte.html" role="button">Finalizar</a>
+            <a id="finalizeButton" class="sig-btn link-no-underline" href="../reporte.php" role="button">Finalizar</a>
         </div>
     </div>
 

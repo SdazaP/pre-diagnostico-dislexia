@@ -59,13 +59,25 @@ function capturarResultadoTest4() {
         }
     });
 
-    resultados.push({
+    const resultados = {
         test: 4,
         correct: correctCount,
-        incorrect: results.length - correctCount
-    });
+    }
 
-    enviarResultados();
+    fetch('../guardar_resultados.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultados)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar los resultados:', error);
+    });
 }
 
 document.getElementById('finalizeButton').addEventListener('click', capturarResultadoTest4);

@@ -1,3 +1,5 @@
+<?php include("../guardar_resultados.php")?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -194,7 +196,7 @@
                     <div class="word" draggable="true" data-word="piscina">Piscina</div>
                 </div>
             </div>
-            <a id="finalizeButton" class="sig-btn link-no-underline" href="../completa-palabra/completa-palabra.html" role="button">Siguiente prueba</a>
+            <a id="finalizeButton" class="sig-btn link-no-underline" href="../completa-palabra/completa-palabra.php" role="button">Siguiente prueba</a>
         </div>
     </div>
 

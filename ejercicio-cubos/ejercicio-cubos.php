@@ -1,3 +1,5 @@
+<?php include("../guardar_resultados.php")?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -232,7 +234,7 @@
                     <div class="option" draggable="true" data-answer="option5" data-exercise="10" style="background-color: blue; width: 50px; height: 50px;"></div>
                 </div>
             </div>
-            <a id="finalizeButton" class="sig-btn link-no-underline" href="../palabras-imagenes/palabras-imagenes.html" role="button">Siguiente prueba</a>
+            <a id="finalizeButton" class="sig-btn link-no-underline" href="../palabras-imagenes/palabras-imagenes.php" role="button">Siguiente prueba</a>
         </div>
 
     </div>

@@ -1,35 +1,32 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dislexiakids_db";
+session_start();
+include("db/db.php");
 
+$rawData = file_get_contents("php://input");
+$data = json_decode($rawData, true);
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+if (isset($data['test'], $data['correct'])) {
+    $test = $data['test'];
+    $correct = $data['correct'];
+    $idUsuario = $_SESSION["idUsuario"];
 
+    if (!isset($idUsuario)) {
+        echo "Error: idUsuario no está definido en la sesión.";
+        exit;
+    }
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    $columnName = "prueba" . $test;
 
+    $sql = "UPDATE reporte SET $columnName = :correct WHERE idUsuario = :idUsuario";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bindParam(':correct', $correct);
+    $stmt->bindParam(':idUsuario', $idUsuario);
 
-$data = json_decode(file_get_contents('php://input'), true);
-$idUsuario = $data['idUsuario'];
-$idEvaluacion = $data['idEvaluacion'];
-$resultados = $data['resultados'];
+    if ($stmt->execute()) {
+        echo "Registro exitoso: Correctas = $correct";
+    } else {
+        echo "Error al registrar los datos: " . implode(", ", $stmt->errorInfo());
+    }
+} 
 
-
-$stmt = $conn->prepare("INSERT INTO reporte (idEvaluacion, idUsuario, fecha, resultado, tiempo) VALUES (?, ?, NOW(), ?, ?)");
-$stmt->bind_param("iiss", $idEvaluacion, $idUsuario, $resultado, $tiempo);
-
-foreach ($resultados as $resultadoTest) {
-    $resultado = json_encode($resultadoTest);
-    $tiempo = "00:00:00"; 
-    $stmt->execute();
-}
-
-$stmt->close();
-$conn->close();
-
-echo json_encode(['success' => true]);
 ?>

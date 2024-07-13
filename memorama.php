@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,9 +26,7 @@
     <section class="container mt-4 memo">
         <div class="text-center">
             <h1>Memorama</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus molestiae dolorem eius velit
-                tempore optio quis fuga necessitatibus quae autem. Consectetur dicta ducimus ipsa laborum! Doloribus
-                repellendus laudantium voluptatum. Blanditiis?</p>
+            <p>Para jugar al memorama, haz clic en dos cartas para descubrirlas; si son iguales, permanecerán descubiertas, y si no, se volverán a ocultar. El objetivo es emparejar todas las cartas.</p>
         </div>
     </section>
 
@@ -33,7 +35,7 @@
     </section>
 
     <div id="div-btn-sig" class="div-btn-sig" style="display: none;">
-        <a class="btn btn-primary sig-btn" href="ejercicio-cubos/ejercicio-cubos.html" role="button">Siguiente prueba</a>
+        <a class="btn btn-primary sig-btn" href="ejercicio-cubos/ejercicio-cubos.php" role="button">Siguiente prueba</a>
     </div>
 
     <div class="modal fade" id="modalGanador" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -51,42 +53,6 @@
             </div>
         </div>
     </div>
-
-    <footer class="footer text-white">
-        <div class="container">
-            <div class="footer-head">
-                <div class="img-footer">
-                    <img src="images/Logo.png" alt="">
-                </div>
-                <div class="footer-name">
-                    <h1>Pre-Diagnóstico de Dislexia en niños de 1ro y 2do grado de
-                        primaria</h1>
-                </div>
-            </div>
-            <div class="footer-center">
-                <div class="mision">
-                    <h4>Nuestra Misión</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quae laboriosam fugit
-                        doloremque quos ipsa eos vitae aliquid voluptatum necessitatibus.</p>
-                </div>
-                <div class="list">
-                    <ul>
-                        <li>Evaluaciones</li>
-                        <li>Acerca de</li>
-                        <li>Nosotros</li>
-                        <li>Contacto</li>
-                        <li>Catalógo de Instituciones</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <hr>
-        <div class="footer-end">
-            <p>Desarrollado por Aguilar J., Daza S. y González E. <br> I.T.S de Tepexi de Rodríguez</p>
-        </div>
-        </div>
-    </footer>
 
     <script src="js/memorama.js"></script>
     <!-- Bootstrap JS, Popper.js, and jQuery -->

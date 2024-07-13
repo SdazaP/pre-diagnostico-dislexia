@@ -1,5 +1,3 @@
-let resultados = [];
-
 function nextSection(nextSectionId) {
     document.querySelectorAll('.container > div').forEach(div => div.style.display = 'none');
     document.getElementById(nextSectionId).style.display = 'block';
@@ -69,10 +67,24 @@ function capturarResultadoTest2() {
     checkDropzone('dropzone9', 'option5');
     checkDropzone('dropzone10', 'option5');
 
-    resultados.push({
+    const resultados = {
         test: 2,
         correct: correct,
-        incorrect: incorrect
+    }
+
+    fetch('../guardar_resultados.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultados)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar los resultados:', error);
     });
 }
 
