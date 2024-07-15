@@ -1,10 +1,23 @@
-function nextSection(nextSectionId) {
-    document.querySelectorAll('.container > div').forEach(div => div.style.display = 'none');
-    document.getElementById(nextSectionId).style.display = 'block';
+function nextSection(nextSectionId, currentSectionId) {
+    const dropzones = document.querySelectorAll(`#${currentSectionId} .pattern-slot[data-exercise]`);
+
+    let canProceed = true;
+    dropzones.forEach(dropzone => {
+        if (!dropzone.dataset.answer) {
+            canProceed = false;
+        }
+    });
+
+    if (canProceed) {
+        document.querySelectorAll('.container > div').forEach(div => div.style.display = 'none');
+        document.getElementById(nextSectionId).style.display = 'block';
+    } else {
+        alert("Por favor, coloca una figura en el espacio vacío antes de continuar.");
+    }
 }
 
 const options = document.querySelectorAll('.option');
-const dropzones = document.querySelectorAll('.pattern-slot');
+const dropzones = document.querySelectorAll('.pattern-slot[data-exercise]');
 
 options.forEach(option => {
     option.addEventListener('dragstart', dragStart);
@@ -38,54 +51,19 @@ function drop(e) {
         dropzone.style.width = draggedOption.style.width;  
         dropzone.style.height = draggedOption.style.height; 
         dropzone.dataset.answer = answer;
-    }
-}
 
-function capturarResultadoTest2() {
-    let correct = 0;
-    let incorrect = 0;
-
-    const checkDropzone = (id, correctAnswer) => {
-        const dropzone = document.getElementById(id);
-        if (dropzone.dataset.answer === correctAnswer) {
-            dropzone.classList.add('correct');
-            correct++;
-        } else {
-            dropzone.classList.add('incorrect');
-            incorrect++;
+        // Habilitar el botón siguiente cuando se coloca una figura
+        const currentSection = dropzone.closest('div[id^="exercise"]');
+        const nextButton = currentSection.querySelector('button');
+        if (nextButton) {
+            nextButton.disabled = false;
         }
-    };
-
-    checkDropzone('dropzone1', 'option3');
-    checkDropzone('dropzone2', 'option2');
-    checkDropzone('dropzone3', 'option1');
-    checkDropzone('dropzone4', 'option3');
-    checkDropzone('dropzone5', 'option3');
-    checkDropzone('dropzone6', 'option3');
-    checkDropzone('dropzone7', 'option5');
-    checkDropzone('dropzone8', 'option2');
-    checkDropzone('dropzone9', 'option5');
-    checkDropzone('dropzone10', 'option5');
-
-    const resultados = {
-        test: 2,
-        correct: correct,
     }
-
-    fetch('../guardar_resultados.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(resultados)
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log('Respuesta del servidor:', data);
-    })
-    .catch(error => {
-        console.error('Error al enviar los resultados:', error);
-    });
 }
 
-document.getElementById('finalizeButton').addEventListener('click', capturarResultadoTest2);
+document.querySelectorAll('.container > div').forEach(section => {
+    const nextButton = section.querySelector('button');
+    if (nextButton) {
+        nextButton.disabled = true;
+    }
+});

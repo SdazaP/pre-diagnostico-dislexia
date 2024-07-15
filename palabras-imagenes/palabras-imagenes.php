@@ -23,8 +23,9 @@
     <section class="container mt-4 memo">
         <div class="text-center">
             <h1>Unir Palabras con Imágenes</h1>
-            <h3><strong>Instrucciones: </strong></h3>
-            <h4><strong>Arrastra la palabra al cuadro correspondiente debajo de la imagen correcta.</strong></h4>
+            <h3><strong>Instrucciones: Arrastra la palabra al cuadro correspondiente debajo de la imagen correcta.</strong></h3>
+            <p>Nota: Para avanzar al siguiente ejercicio debes dar una respuesta.</p>
+
         </div>
     </section>
 
@@ -35,15 +36,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/paleta.png" alt="Paleta">
-                    <div class="dropzone" id="dropzone1"></div>
-                </div>
+                    <div class="dropzone" id="dropzone1" data-exercise="1"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="paleta">Paleta</div>
                     <div class="word" draggable="true" data-word="camisa">Camisa</div>
                     <div class="word" draggable="true" data-word="bicicleta">Bicicleta</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio2')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio2', 'ejercicio1')"disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 2 -->
@@ -52,15 +53,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/camisa.png" alt="Camisa">
-                    <div class="dropzone" id="dropzone2"></div>
-                </div>
+                    <div class="dropzone" id="dropzone2" data-exercise="2"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="camisa">Camisa</div>
                     <div class="word" draggable="true" data-word="paleta">Paleta</div>
                     <div class="word" draggable="true" data-word="helicoptero">Helicóptero</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio3')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio3', 'ejercicio2')"disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 3 -->
@@ -69,15 +70,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/bicicleta.png" alt="Bicicleta">
-                    <div class="dropzone" id="dropzone3"></div>
-                </div>
+                    <div class="dropzone" id="dropzone3" data-exercise="3"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="bicicleta">Bicicleta</div>
                     <div class="word" draggable="true" data-word="camisa">Camisa</div>
                     <div class="word" draggable="true" data-word="cansado">Cansado</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio4')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio4', 'ejercicio3')"disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 4 -->
@@ -86,15 +87,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/helicoptero.png" alt="Helicóptero">
-                    <div class="dropzone" id="dropzone4"></div>
-                </div>
+                    <div class="dropzone" id="dropzone4" data-exercise="4"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="helicoptero">Helicóptero</div>
                     <div class="word" draggable="true" data-word="piscina">Piscina</div>
                     <div class="word" draggable="true" data-word="cangrejo">Cangrejo</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio5')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio5', 'ejercicio4')"disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 5 -->
@@ -103,15 +104,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/cansado.png" alt="Cansado">
-                    <div class="dropzone" id="dropzone5"></div>
-                </div>
+                    <div class="dropzone" id="dropzone5" data-exercise="5"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="cansado">Cansado</div>
                     <div class="word" draggable="true" data-word="jirafa">Jirafa</div>
                     <div class="word" draggable="true" data-word="zapato">Zapato</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio6')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio6', 'ejercicio5')"disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 6 -->
@@ -120,15 +121,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/piscina.png" alt="Piscina">
-                    <div class="dropzone" id="dropzone6"></div>
-                </div>
+                    <div class="dropzone" id="dropzone6" data-exercise="6"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="piscina">Piscina</div>
                     <div class="word" draggable="true" data-word="cangrejo">Cangrejo</div>
                     <div class="word" draggable="true" data-word="pelota">Pelota</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio7')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio7', 'ejercicio6')"disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 7 -->
@@ -137,15 +138,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/cangrejo.png" alt="Cangrejo">
-                    <div class="dropzone" id="dropzone7"></div>
-                </div>
+                    <div class="dropzone" id="dropzone7" data-exercise="7"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="cangrejo">Cangrejo</div>
                     <div class="word" draggable="true" data-word="piscina">Piscina</div>
                     <div class="word" draggable="true" data-word="jirafa">Jirafa</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio8')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio8', 'ejercicio7')" disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 8 -->
@@ -154,15 +155,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/jirafa.png" alt="Jirafa">
-                    <div class="dropzone" id="dropzone8"></div>
-                </div>
+                    <div class="dropzone" id="dropzone8" data-exercise="8"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="jirafa">Jirafa</div>
                     <div class="word" draggable="true" data-word="zapato">Zapato</div>
                     <div class="word" draggable="true" data-word="pelota">Pelota</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio9')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio9', 'ejercicio8')" disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 9 -->
@@ -171,15 +172,15 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/zapato.png" alt="Zapato">
-                    <div class="dropzone" id="dropzone9"></div>
-                </div>
+                    <div class="dropzone" id="dropzone9" data-exercise="9"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="zapato">Zapato</div>
                     <div class="word" draggable="true" data-word="camisa">Camisa</div>
                     <div class="word" draggable="true" data-word="cansado">Cansado</div>
                 </div>
             </div>
-            <button class="siguiente-btn" onclick="nextSection('ejercicio10')">Siguiente</button>
+            <button class="siguiente-btn" onclick="nextSection('ejercicio10', 'ejercicio9')" disabled>Siguiente</button>
         </div>
 
         <!-- Ejercicio 10 -->
@@ -188,8 +189,8 @@
             <div class="exercise-container">
                 <div class="exercise-image">
                     <img src="../images/pelota.png" alt="Pelota">
-                    <div class="dropzone" id="dropzone10"></div>
-                </div>
+                    <div class="dropzone" id="dropzone10" data-exercise="10"></div>
+                    </div>
                 <div class="exercise-words">
                     <div class="word" draggable="true" data-word="pelota">Pelota</div>
                     <div class="word" draggable="true" data-word="camisa">Camisa</div>

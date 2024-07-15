@@ -23,14 +23,35 @@ function drop(e) {
     const data = e.dataTransfer.getData('text/plain');
     const dropzone = e.target;
     dropzone.textContent = data;
+    dropzone.dataset.syllable = data;
+
+    // Habilitar el botón siguiente cuando se coloca una sílaba
+    const currentSection = dropzone.closest('div[id^="ejercicio"]');
+    const nextButton = currentSection.querySelector('button');
+    if (nextButton) {
+        nextButton.disabled = false;
+    }
 }
 
-function nextSection(sectionId) {
-    const sections = document.querySelectorAll('div[id^="ejercicio"]');
-    sections.forEach(section => {
-        section.style.display = 'none';
+function nextSection(sectionId, currentSectionId) {
+    const dropzones = document.querySelectorAll(`#${currentSectionId} .word-slot[id^="dropzone"]`);
+
+    let canProceed = true;
+    dropzones.forEach(dropzone => {
+        if (!dropzone.dataset.syllable) {
+            canProceed = false;
+        }
     });
-    document.getElementById(sectionId).style.display = 'block';
+
+    if (canProceed) {
+        const sections = document.querySelectorAll('div[id^="ejercicio"]');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+    } else {
+        alert("Por favor, coloca una sílaba en el espacio vacío antes de continuar.");
+    }
 }
 
 function capturarResultadoTest4() {
@@ -80,4 +101,14 @@ function capturarResultadoTest4() {
     });
 }
 
-document.getElementById('finalizeButton').addEventListener('click', capturarResultadoTest4);
+const finalizeButton = document.getElementById('finalizeButton');
+if (finalizeButton) {
+    finalizeButton.addEventListener('click', capturarResultadoTest4);
+}
+
+document.querySelectorAll('div[id^="ejercicio"]').forEach(section => {
+    const nextButton = section.querySelector('button');
+    if (nextButton) {
+        nextButton.disabled = true;
+    }
+});
