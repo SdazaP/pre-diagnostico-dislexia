@@ -54,20 +54,10 @@ function checkForMatch() {
 
     if (matchedCards.length === cardsArray.length * 2) {
         mostrarModalDeGanador();
-        divParaActivar.style.display = 'flex';
     }
-}
-
-function capturarResultadoTest1() {
-    const resultado = 'Resultado Memorama';
-    resultados.push({
-        test: 1,
-        resultado: resultado
-    });
 }
 
 function mostrarModalDeGanador() {
     $('#modalGanador').modal('show');
-    capturarResultadoTest1();
 }
 document.addEventListener('DOMContentLoaded', createCards);

@@ -15,8 +15,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/timerInicio.js"></script>
 </head>
@@ -49,6 +48,9 @@ session_start();
                 <div class="modal-body text-center">
                     <img src="images/check.png" alt="Éxito">
                     <h2>¡Has ganado!</h2>
+                    <div id="div-btn-sig" class="div-btn-sig">
+                        <a class="btn btn-primary sig-btn" href="ejercicio-cubos/ejercicio-cubos.php" role="button">Siguiente prueba</a>
+                    </div>
                 </div>
             </div>
         </div>

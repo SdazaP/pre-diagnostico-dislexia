@@ -464,10 +464,11 @@ h1 {
 }
 
 .div-btn-sig{
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
-    margin-top: -50px;
+    margin-top: 25px;
 }
 
 .sig-btn{
