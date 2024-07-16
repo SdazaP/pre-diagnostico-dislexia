@@ -19,7 +19,7 @@
     <!-- Barra de Navegación -->
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="contt">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="images/Logo.png" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -93,8 +93,8 @@
 
     <!-- Modal de confirmación -->
     
-    <!-- Pie de Página  -->
-    <footer class="footer">
+     <!-- Pie de Página  -->
+     <footer class="footer">
         <div class="container">
             <div class="footer-head">
                 <div class="img-footer">
@@ -108,20 +108,19 @@
             <div class="footer-center">
                 <div class="mision">
                     <h4>Nuestra Misión</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quae laboriosam fugit
-                        doloremque quos ipsa eos vitae aliquid voluptatum necessitatibus.</p>
+                    <p>Brindar un diagnóstico temprano y preciso de dislexia en niños, permitiendo una intervención oportuna que facilite su proceso de aprendizaje y mejore su calidad de vida.</p>
                 </div>
                 <div class="list">
                     <ul>
-                        <li>Evaluaciones</li>
-                        <li>Acerca de</li>
-                        <li>Nosotros</li>
-                        <li>Contacto</li>
-                        <li>Catalógo de Instituciones</li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="evaluaciones.php">Evaluaciones</a></li>
+                        <li><a href="acerca-de.php">Acerca de</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
+                        <li><a href="catalogo-instituciones.php">Catalógo de Instituciones</a></li>
                     </ul>
                 </div>
             </div>
-            
+
         </div>
         <hr>
         <div class="footer-end">

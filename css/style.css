@@ -188,6 +188,10 @@ h1 {
     width: 50%;
 }
 
+.list a{
+    color: #fff;
+}
+
 .list ul li{
     margin: .5em 0;
     font-weight: bold;
