@@ -37,9 +37,6 @@ $result = mysqli_stmt_get_result($stmt);
 $user_report_info = mysqli_fetch_assoc($result);
 mysqli_stmt_close($stmt);
 
-date_default_timezone_set('America/Mexico_City');
-$fechaActual = date('Y-m-d');
-
 ?>
 
 <!DOCTYPE html>

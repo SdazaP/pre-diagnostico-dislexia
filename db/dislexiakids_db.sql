@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-07-2024 a las 16:06:51
+-- Tiempo de generación: 16-07-2024 a las 01:27:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,28 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `dislexiakids_db`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `evaluación`
---
-
-CREATE TABLE `evaluación` (
-  `idEvaluacion` int(11) NOT NULL,
-  `Nombre` varchar(30) DEFAULT NULL,
-  `Descripción` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `evaluación`
---
-
-INSERT INTO `evaluación` (`idEvaluacion`, `Nombre`, `Descripción`) VALUES
-(1, 'Memorama', NULL),
-(2, 'Patrones Figuras', NULL),
-(3, 'Palabra-Imagen', NULL),
-(4, 'Completa Palabra', NULL);
 
 -- --------------------------------------------------------
 
@@ -76,14 +54,13 @@ INSERT INTO `institución` (`idInstitucion`, `logo`, `nombre`, `descripcion`, `n
 
 CREATE TABLE `reporte` (
   `idReporte` int(11) NOT NULL,
-  `idEvaluacion` int(11) DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
-  `prueba1` varchar(30) NOT NULL,
-  `prueba2` varchar(30) NOT NULL,
-  `prueba3` varchar(30) NOT NULL,
-  `prueba4` varchar(30) NOT NULL,
-  `resultado` varchar(255) DEFAULT NULL,
+  `prueba1` int(11) DEFAULT NULL,
+  `prueba2` int(11) DEFAULT NULL,
+  `prueba3` int(11) DEFAULT NULL,
+  `prueba4` int(11) DEFAULT NULL,
+  `resultado` int(11) DEFAULT NULL,
   `tiempo` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -104,12 +81,6 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Indices de la tabla `evaluación`
---
-ALTER TABLE `evaluación`
-  ADD PRIMARY KEY (`idEvaluacion`);
-
---
 -- Indices de la tabla `institución`
 --
 ALTER TABLE `institución`
@@ -120,7 +91,6 @@ ALTER TABLE `institución`
 --
 ALTER TABLE `reporte`
   ADD PRIMARY KEY (`idReporte`),
-  ADD KEY `idEvaluacion` (`idEvaluacion`),
   ADD KEY `idUsuario` (`idUsuario`);
 
 --
@@ -134,12 +104,6 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `evaluación`
---
-ALTER TABLE `evaluación`
-  MODIFY `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT de la tabla `institución`
 --
 ALTER TABLE `institución`
@@ -149,24 +113,13 @@ ALTER TABLE `institución`
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `reporte`
---
-ALTER TABLE `reporte`
-  ADD CONSTRAINT `reporte_ibfk_1` FOREIGN KEY (`idEvaluacion`) REFERENCES `evaluación` (`idEvaluacion`),
-  ADD CONSTRAINT `reporte_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,6 +2,7 @@ const cardsArray = ['images/helicoptero.png', 'images/jirafa.png', 'images/cangr
 const divParaActivar = document.getElementById('div-btn-sig');
 let chosenCards = [];
 let matchedCards = [];
+let intentos = 0; 
 
 function shuffleCards(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -38,7 +39,7 @@ function flipCard() {
 
 function checkForMatch() {
     const [card1, card2] = chosenCards;
-
+    
     if (card1.dataset.card === card2.dataset.card) {
         matchedCards.push(card1, card2);
         card1.removeEventListener('click', flipCard);
@@ -51,9 +52,29 @@ function checkForMatch() {
     }
 
     chosenCards = [];
+    intentos++;
 
     if (matchedCards.length === cardsArray.length * 2) {
         mostrarModalDeGanador();
+        const resultados = {
+            test: 1,
+            correct: intentos
+        }
+    
+        fetch('guardar_resultados.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(resultados)
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log('Respuesta del servidor:', data);
+        })
+        .catch(error => {
+            console.error('Error al enviar los resultados:', error);
+        });
     }
 }
 
