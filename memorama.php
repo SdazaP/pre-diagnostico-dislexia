@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (!isset($_SESSION["idUsuario"])) {
+    header("Location: prueba-registro.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +45,6 @@ session_start();
     <div class="modal fade" id="modalGanador" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="modal-body text-center">
                     <img src="images/check.png" alt="Éxito">
                     <h2>¡Has ganado!</h2>

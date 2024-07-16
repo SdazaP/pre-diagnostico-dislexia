@@ -1,3 +1,5 @@
+<?php include("../guardar_resultados.php")?>
+
 <!DOCTYPE html>
 <html lang="es">
 

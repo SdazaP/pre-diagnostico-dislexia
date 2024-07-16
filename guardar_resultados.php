@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION["idUsuario"])) {
+    header("Location: ../prueba-registro.php");
+    exit();
+}
+
 include("db/db.php");
 
 $rawData = file_get_contents("php://input");
