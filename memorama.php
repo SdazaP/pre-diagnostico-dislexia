@@ -42,7 +42,7 @@ if (!isset($_SESSION["idUsuario"])) {
         <a class="btn btn-primary sig-btn" href="ejercicio-cubos/ejercicio-cubos.php" role="button">Siguiente prueba</a>
     </div>
 
-    <div class="modal fade" id="modalGanador" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalGanador" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body text-center">
@@ -61,12 +61,6 @@ if (!isset($_SESSION["idUsuario"])) {
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        function mostrarModalDeGanador() {
-            $('#modalGanador').modal('show');
-        }
-    </script>
 
 </body>
 
