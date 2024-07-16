@@ -1,6 +1,12 @@
 <?php
 include("template/header.php");
 include("controllerRegistro.php");
+
+//Falta seleccionar a donde va a dirigir si es que ya habia una sesión iniciada
+/* if (!isset($_SESSION["idUsuario"])) {
+  header("Location: prueba-registro.php");
+  exit();
+} */
 ?>
 
 <!-- Modal de Aviso de Privacidad -->

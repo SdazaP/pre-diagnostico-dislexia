@@ -26,8 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuarioExistente = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($usuarioExistente) {
-        // El correo ya está registrado, mostrar el mensaje
-        $error_message = "Usuario ya registrado, por favor revisa tu correo para ver tus resultados";
+        // El correo ya está registrado, manda a sesion-alerta
+        $_SESSION['idUsuario'] = $usuarioExistente['idUsuario'];
+        header('Location: sesion-alerta.php');
+        exit();
+        
     } else {
         // El correo no está registrado, proceder con la inserción
         $sql = "INSERT INTO usuario (nombre, correo) VALUES (:nombre, :correo)";
