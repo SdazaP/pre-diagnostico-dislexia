@@ -26,11 +26,14 @@ function drop(e) {
     dropzone.textContent = data;
     dropzone.dataset.word = data;
 
-    // Habilitar el botón siguiente cuando se coloca una palabra
     const currentSection = dropzone.closest('div[id^="ejercicio"]');
     const nextButton = currentSection.querySelector('button');
     if (nextButton) {
         nextButton.disabled = false;
+    }
+    
+    if (dropzone.id === "dropzone10") {
+        finalizeButton.disabled = false;
     }
 }
 
@@ -51,6 +54,17 @@ function nextSection(sectionId, currentSectionId) {
         });
         document.getElementById(sectionId).style.display = 'block';
     } else {
+        alert("Por favor, coloca una palabra en el espacio vacío antes de continuar.");
+    }
+}
+
+function validateAndProceed(e) {
+    const dropzone10 = document.getElementById('dropzone10');
+    if (dropzone10.dataset.word) {
+        capturarResultadoTest3();
+        window.location.href = "../completa-palabra/completa-palabra.php";
+    } else {
+        e.preventDefault();  
         alert("Por favor, coloca una palabra en el espacio vacío antes de continuar.");
     }
 }
@@ -79,31 +93,28 @@ function capturarResultadoTest3() {
         } else {
             dropzone.classList.add('incorrect');
         }
-
-        const resultados = {
-            test: 3,
-            correct: correctCount,
-        }
-
-        fetch('../guardar_resultados.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(resultados)
-        })
-            .then(response => response.text())
-            .then(data => {
-                console.log('Respuesta del servidor:', data);
-            })
-            .catch(error => {
-                console.error('Error al enviar los resultados:', error);
-            });
     });
 
-}
+    const resultados = {
+        test: 3,
+        correct: correctCount,
+    }
 
-document.getElementById('finalizeButton').addEventListener('click', capturarResultadoTest3);
+    fetch('../guardar_resultados.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultados)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch(error => {
+        console.error('Error al enviar los resultados:', error);
+    });
+}
 
 document.querySelectorAll('div[id^="ejercicio"]').forEach(section => {
     const nextButton = section.querySelector('button');

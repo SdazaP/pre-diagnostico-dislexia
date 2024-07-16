@@ -256,7 +256,7 @@
             <img src="../images/pelota.png" alt="Imagen Ejercicio 10">
         </div>
     </div>
-    <a id="finalizeButton" class="sig-btn link-no-underline" href="../reporte.php" role="button" onclick="capturarResultadoTest4()">Finalizar</a>
+    <a id="finalizeButton" class="sig-btn link-no-underline" href="../reporte.php" role="button">Finalizar</a>
 </div>
     </div>
 

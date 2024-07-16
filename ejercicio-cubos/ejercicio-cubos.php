@@ -236,8 +236,8 @@
             <div class="option" draggable="true" data-answer="option5" data-exercise="10" style="background-color: blue; width: 50px; height: 50px;"></div>
         </div>
     </div>
-    <a id="finalizeButton" class="sig-btn link-no-underline" href="../palabras-imagenes/palabras-imagenes.php" role="button" onclick="capturarResultadoTest2()">Siguiente prueba</a>
-</div>
+    <a id="finalizeButton" class="sig-btn link-no-underline" href="#" role="button" onclick="validateAndProceed()" disabled>Siguiente prueba</a>
+    </div>
 
 
     </div>
