@@ -63,7 +63,7 @@ function validateAndFinalize(e) {
 
     if (dropzone10 && dropzone10.dataset.syllable) {
         capturarResultadoTest4();
-        window.location.href = "../reporte.php";
+        window.location.href = "../pre-reporte.php";
     } else {
         alert("Por favor, coloca una sílaba en el espacio vacío antes de continuar.");
     }
