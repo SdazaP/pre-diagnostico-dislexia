@@ -61,8 +61,8 @@ if (!isset($_SESSION["idUsuario"])) {
     <div class="container">
         <h2>Este correo ya ha sido registrado</h2>
         <p>Recuerda que tambien puedes consultar tus resultados en tu correo electronico</p>
-        <a href="reporte.php" class="btn btn-primary">Ver resultado</a>
-        <a type="button" class="btn btn-primary">Reintentar prueba</a>
+        <a href="lista-resultados.php" class="btn btn-primary">Ver resultados</a>
+        <a href="memorama.php" class="btn btn-primary">Reintentar prueba</a>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
