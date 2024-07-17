@@ -539,6 +539,96 @@ h1 {
     margin: 3em 0;
 }
 
+/* Reporte */
+
+.contenedor-rep{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contenido-rep{
+    width: 90%;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px black; 
+    margin: 35px 0 50px 0;
+    padding: 20px;
+}
+
+.contenido-rep hr{
+    margin: 10px 25px 35px 25px;
+}
+
+.contenido-rep h1, h2, h3{
+    font-weight: bold;
+}
+
+.contenido-rep p{
+    text-align: justify;
+    margin: 0 50px 25px 50px;
+}
+
+.encabezado-rep{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.encabezado-rep h2{
+    padding: 0 25px;
+    text-align: center;
+    flex: 1 1 100%;
+}
+
+.encabezado-img{
+    width: 7em;
+    height: auto;
+    margin-left: 25px;
+    flex: 0 0 auto;
+}
+
+.contenido-rep h3, h1{
+    text-align: center;
+}
+
+.pre-diag{
+    padding: 25px 0 50px 0;
+}
+
+.cont-tabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+    overflow-x: auto;
+}
+
+.table-responsive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla-result{
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 4px;
+    table-layout: auto;
+}
+
+.tabla-result th, td{
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px 15px;
+    word-wrap: break-word;
+}
 
 /* responsive */
 
@@ -720,6 +810,64 @@ h1 {
 }
 
 @media (max-width: 768px) {
+
+    /* Reporte */
+
+    .contenido-rep {
+        margin: 20px 0; 
+        padding-top: 0;
+    }
+
+    .contenido-rep p {
+        margin: 0 10px 25px 10px; 
+    }
+
+    .contenido-rep h1 {
+        font-size: 2em; 
+    }
+
+    .contenido-rep h2 {
+        font-size: 1.5em; 
+    }
+
+    .contenido-rep h3 {
+        font-size: 1.2em; 
+    }
+
+    .encabezado-rep{
+        flex-direction: column; 
+    }
+
+    .encabezado-rep h2 {
+        padding: 0 10px; 
+    }
+
+    .encabezado-img {
+        margin: 0 0 15px 0; 
+    }
+
+    .cont-tabla {
+        padding-bottom: 25px;
+        overflow-x: auto;
+    }
+
+    .table-responsive{
+        display: block;
+    }
+
+    .tabla-result {
+        width: 100%; 
+    }
+
+    .tabla-result th, td {
+        padding: 5px; 
+        font-size: 0.8em; 
+    }
+
+    .pre-diag{
+        padding-bottom: 10px;
+    }
+
     .header-image{
         width: 100%;
     }
