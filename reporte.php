@@ -16,10 +16,10 @@ if ($conn->connect_error) {
 // Obtén el id del usuario desde la URL o la sesión
 $idUsuario = isset($_GET['id']) ? $_GET['id'] : (isset($_SESSION["idUsuario"]) ? $_SESSION["idUsuario"] : null);
 
-/*if ($idUsuario === null) {
+if ($idUsuario === null) {
     header("Location: prueba-registro.php");
     exit();
-}*/
+}
 
 // Obtén la información del usuario
 $query = "SELECT * FROM usuario WHERE idUsuario = ?";
