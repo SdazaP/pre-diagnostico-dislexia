@@ -17,11 +17,11 @@
                 </div>
                 <div class="list">
                     <ul>
-                        <li>Evaluaciones</li>
-                        <li>Acerca de</li>
-                        <li>Nosotros</li>
-                        <li>Contacto</li>
-                        <li>Catalógo de Instituciones</li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="evaluaciones.php">Evaluaciones</a></li>
+                        <li><a href="acerca-de.php">Acerca de</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
+                        <li><a href="catalogo-instituciones.php">Catalógo de Instituciones</a></li>
                     </ul>
                 </div>
             </div>

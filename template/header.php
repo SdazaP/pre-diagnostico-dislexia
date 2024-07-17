@@ -19,7 +19,7 @@
     <!-- Barra de Navegación -->
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="images/Logo.png" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
