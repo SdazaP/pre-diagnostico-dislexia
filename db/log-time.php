@@ -4,6 +4,7 @@ session_start();
 include("db.php");
 
 $idUsuario = $_SESSION["idUsuario"];
+$idReporte = $_SESSION["idReporte"];
 
 // Obtener datos de la solicitud
 $rawData = file_get_contents("php://input");
@@ -18,10 +19,10 @@ $seconds = $timeSpentSeconds % 60;
 $timeSpentFormatted = sprintf('%02d:%02d', $minutes, $seconds);
 
 // Insertar datos en la base de datos
-$sql = "UPDATE reporte SET tiempo = :timeSpent WHERE idUsuario = :idUsuario";
+$sql = "UPDATE reporte SET tiempo = :timeSpent WHERE idReporte = :idReporte";
 $stmt = $conexion->prepare($sql);
 $stmt->bindParam(':timeSpent', $timeSpentFormatted);
-$stmt->bindParam(':idUsuario', $idUsuario);
+$stmt->bindParam(':idReporte', $idReporte);
 
 //Ejecutar
 if ($stmt->execute()) {

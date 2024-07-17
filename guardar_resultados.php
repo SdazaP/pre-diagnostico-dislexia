@@ -21,18 +21,53 @@ if (isset($data['test'], $data['correct'])) {
         exit;
     }
 
-    $columnName = "prueba" . $test;
-
-    $sql = "UPDATE reporte SET $columnName = :correct WHERE idUsuario = :idUsuario";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bindParam(':correct', $correct);
-    $stmt->bindParam(':idUsuario', $idUsuario);
-
-    if ($stmt->execute()) {
-        echo "Registro exitoso: Correctas = $correct";
-    } else {
-        echo "Error al registrar los datos: " . implode(", ", $stmt->errorInfo());
+    switch ($test) {
+        case 1:
+            $_SESSION['prueba1'] = $correct;
+            break;
+        case 2:
+            $_SESSION['prueba2'] = $correct;
+            $prueba2 = $_SESSION['prueba2'];
+            break;
+        case 3:
+            $_SESSION['prueba3'] = $correct;
+            $prueba3 = $_SESSION['prueba3'];
+            break;
+        case 4:
+            $prueba1 = $_SESSION['prueba1'];
+            $prueba2 = $_SESSION['prueba2'];
+            $prueba3 = $_SESSION['prueba3'];
+            $prueba4 = $correct;
+            break;
+        default:
+            echo "Error: Test no definido";
+            break;
     }
-} 
 
-?>
+    if (isset($prueba1) && isset($prueba2) && isset($prueba3) && isset($prueba4)) {
+
+        date_default_timezone_set('America/Mexico_City');
+        $fechaActual = date('Y-m-d');
+
+        $sql = "INSERT INTO reporte (idUsuario, fecha, prueba1, prueba2, prueba3, prueba4) VALUES (:idUsuario, :fecha, :prueba1, :prueba2, :prueba3, :prueba4)";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bindParam(':idUsuario', $idUsuario);
+        $stmt->bindParam(':fecha', $fechaActual);
+        $stmt->bindParam(':prueba1', $prueba1);
+        $stmt->bindParam(':prueba2', $prueba2);
+        $stmt->bindParam(':prueba3', $prueba3);
+        $stmt->bindParam(':prueba4', $prueba4);
+        
+        if ($stmt->execute()) {
+            echo "Registro exitoso: Correctas = $correct";
+            $lastId = $conexion->lastInsertId();
+            $_SESSION['idReporte'] = $lastId;
+            unset($_SESSION['prueba1']);
+            unset($_SESSION['prueba2']);
+            unset($_SESSION['prueba3']);
+        } else {
+            echo "Error al registrar los datos: " . implode(", ", $stmt->errorInfo());
+        }
+    }
+
+}

@@ -38,26 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':correo', $email);
 
-        if (!$stmt->execute()) {
-            $error_message = "Error al crear registro";
-        } else {
+        if ($stmt->execute()) {
             $lastId = $conexion->lastInsertId();
             $_SESSION['idUsuario'] = $lastId;
-
-            date_default_timezone_set('America/Mexico_City');
-            $fechaActual = date('Y-m-d');
-
-            $sql = "INSERT INTO reporte (idUsuario, fecha) VALUES (:idUsuario, :fecha)";
-            $stmt = $conexion->prepare($sql);
-            $stmt->bindParam(':idUsuario', $lastId);
-            $stmt->bindParam(':fecha', $fechaActual);
-
-            if (!$stmt->execute()) {
-                $error_message = "Error al crear registro en reporte";
-            } else {
-                header('Location: memorama.php');
-                exit();
-            }
+            header('Location: memorama.php');
+            exit();
+        } else {
+            $error_message = "Error al crear registro";
         }
     }
 }

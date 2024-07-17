@@ -16,6 +16,8 @@ if ($conn->connect_error) {
 // Obtén el id del usuario desde la URL o la sesión
 $idUsuario = isset($_GET['id']) ? $_GET['id'] : (isset($_SESSION["idUsuario"]) ? $_SESSION["idUsuario"] : null);
 
+$idReporte = $_SESSION["idReporte"];
+
 if ($idUsuario === null) {
     header("Location: prueba-registro.php");
     exit();
@@ -31,9 +33,9 @@ $user_info = mysqli_fetch_assoc($result);
 mysqli_stmt_close($stmt);
 
 // Obtén el reporte del usuario
-$query = "SELECT * FROM reporte WHERE idUsuario = ?";
+$query = "SELECT * FROM reporte WHERE idReporte = ?";
 $stmt = mysqli_prepare($conn, $query);
-mysqli_stmt_bind_param($stmt, 's', $idUsuario);
+mysqli_stmt_bind_param($stmt, 's', $idReporte);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 $user_report_info = mysqli_fetch_assoc($result);
