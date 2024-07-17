@@ -59,8 +59,8 @@ if (!isset($_SESSION["idUsuario"])) {
 </head>
 <body>
     <div class="container">
-        <h2>Este correo ya ha sido registrado</h2>
-        <p>Recuerda que tambien puedes consultar tus resultados en tu correo electronico</p>
+        <h2>Este usuario y correo ya ha sido registrado</h2>
+        <p>Recuerda que tambien puedes consultar tus resultados en tu correo electrónico</p>
         <a href="lista-resultados.php" class="btn btn-primary">Ver resultados</a>
         <a href="memorama.php" class="btn btn-primary">Reintentar prueba</a>
     </div>
