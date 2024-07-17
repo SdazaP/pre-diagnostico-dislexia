@@ -6,32 +6,31 @@ if (!isset($_SESSION["idUsuario"])) {
     exit();
 }
 
-// Obtén el id del usuario desde la URL o la sesión
-$idUsuario = isset($_GET['id']) ? $_GET['id'] : (isset($_SESSION["idUsuario"]) ? $_SESSION["idUsuario"] : null);
+$idUsuario = $_SESSION["idUsuario"];
 
 include("db/db.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Resultados</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        h1{
+        h1 {
             margin: 0 0 2em 0;
         }
     </style>
 </head>
 <body>
-    
-<div class="container mt-5">
+    <div class="container mt-5">
         <h1>Tus resultados</h1>
         <div class="row" id="reportes">
             <?php
-                $stmt = $conexion->prepare("SELECT idReporte, fecha FROM reporte");
+                $stmt = $conexion->prepare("SELECT idReporte, fecha FROM reporte WHERE idUsuario = :idUsuario");
+                $stmt->bindParam(':idUsuario', $idUsuario, PDO::PARAM_INT);
                 $stmt->execute();
             
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -42,7 +41,7 @@ include("db/db.php");
                         echo '<div class="col-md-4 mb-4">';
                         echo '<div class="card">';
                         echo '<div class="card-body">';
-                        echo '<a href="reporte.php" class="stretched-link">';
+                        echo '<a href="reporte.php?id=' . $row["idReporte"] . '" class="stretched-link">';
                         echo '<h5 class="card-title">Reporte ID: ' . $row["idReporte"] . '</h5>';
                         echo '<p class="card-text">Fecha: ' . $row["fecha"] . '</p>';
                         echo '</a>';
@@ -51,7 +50,7 @@ include("db/db.php");
                         echo '</div>';
                     }
                 } else {
-                    echo "0 resultados";
+                    echo '<p>No hay resultados.</p>';
                 }
             ?>
         </div>
