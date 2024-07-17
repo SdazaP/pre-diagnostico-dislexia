@@ -27,11 +27,9 @@ if (isset($data['test'], $data['correct'])) {
             break;
         case 2:
             $_SESSION['prueba2'] = $correct;
-            $prueba2 = $_SESSION['prueba2'];
             break;
         case 3:
             $_SESSION['prueba3'] = $correct;
-            $prueba3 = $_SESSION['prueba3'];
             break;
         case 4:
             $prueba1 = $_SESSION['prueba1'];
