@@ -41,7 +41,7 @@ include("db/db.php");
                         echo '<div class="col-md-4 mb-4">';
                         echo '<div class="card">';
                         echo '<div class="card-body">';
-                        echo '<a href="reporte.php?id=' . $row["idReporte"] . '" class="stretched-link">';
+                        echo '<a href="reporte.php?idR=' . $row["idReporte"] . '&idU=' . $idUsuario . '" class="stretched-link">';
                         echo '<h5 class="card-title">Reporte ID: ' . $row["idReporte"] . '</h5>';
                         echo '<p class="card-text">Fecha: ' . $row["fecha"] . '</p>';
                         echo '</a>';

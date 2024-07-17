@@ -14,9 +14,9 @@ if ($conn->connect_error) {
 }
 
 // Obtén el id del usuario desde la URL o la sesión
-$idUsuario = isset($_GET['id']) ? $_GET['id'] : (isset($_SESSION["idUsuario"]) ? $_SESSION["idUsuario"] : null);
+$idUsuario = isset($_GET['idU']) ? $_GET['idU'] : (isset($_SESSION["idUsuario"]) ? $_SESSION["idUsuario"] : null);
 
-$idReporte = $_SESSION["idReporte"];
+$idReporte = isset($_GET['idR']) ? $_GET['idR'] : (isset($_SESSION["idReporte"]) ? $_SESSION["idReporte"] : null);
 
 if ($idUsuario === null) {
     header("Location: prueba-registro.php");
@@ -61,6 +61,7 @@ include("template/header.php") ?>
                 <div class="table-responsive">
                     <table class="tabla-result">
                         <tr>
+                            <th>Nombre</th>
                             <th>Memorama</th>
                             <th>Patrones</th>
                             <th>Palabra-Imagen</th>
@@ -68,7 +69,8 @@ include("template/header.php") ?>
                             <th>Tiempo</th>
                             <th>Resultado Final</th>
                         </tr>
-                        <tr>
+                        <tr>                            
+                            <td><?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba1']) ? $user_report_info['prueba1'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba2']) ? $user_report_info['prueba2'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba3']) ? $user_report_info['prueba3'] : ""; ?></td>
