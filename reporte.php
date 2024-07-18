@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 $servername = "localhost";
@@ -15,7 +14,6 @@ if ($conn->connect_error) {
 
 // Obtén el id del usuario desde la URL o la sesión
 $idUsuario = isset($_GET['idU']) ? $_GET['idU'] : (isset($_SESSION["idUsuario"]) ? $_SESSION["idUsuario"] : null);
-
 $idReporte = isset($_GET['idR']) ? $_GET['idR'] : (isset($_SESSION["idReporte"]) ? $_SESSION["idReporte"] : null);
 
 if ($idUsuario === null) {
@@ -43,9 +41,29 @@ mysqli_stmt_close($stmt);
 
 include("template/header.php") ?>
 
+<!-- Modal de Descargar reporte -->
+<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="privacyModalLabel">Descarga tu reporte</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Le recomendamos descargar su reporte justo ahora para evitar que pueda perder su información.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="downloadButton" class="btn btn-primary" data-dismiss="modal">Descargar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <body>
     <div class="contenedor-rep">
-        <div class="contenido-rep">
+        <div class="contenido-rep" id="content-to-pdf">
             <div class="encabezado-rep">
                 <img src="images/Logo.png" class="encabezado-img img-fluid">
                 <h2>Dislexia Kids Pre-Diagnóstico de Dislexia en niños
@@ -88,3 +106,44 @@ include("template/header.php") ?>
     </div>
 
     <?php include("template/footer.php") ?>
+    
+    <!-- Incluye los scripts de html2canvas y jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Script para mostrar el modal al cargar la página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userName = "<?php echo isset($user_info['nombre']) ? $user_info['nombre'] : 'Desconocido'; ?>";
+
+            document.getElementById('downloadButton').addEventListener('click', function() {
+                html2canvas(document.getElementById('content-to-pdf')).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF();
+                    const imgWidth = 210; // A4 width in mm
+                    const pageHeight = 295; // A4 height in mm
+                    const imgHeight = canvas.height * imgWidth / canvas.width;
+                    let heightLeft = imgHeight;
+
+                    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+
+                    while (heightLeft >= 0) {
+                        pdf.addPage();
+                        pdf.addImage(imgData, 'PNG', 0, -heightLeft, imgWidth, imgHeight);
+                        heightLeft -= pageHeight;
+                    }
+
+                    // Usar el nombre del usuario para el archivo PDF
+                    pdf.save(`reporte_${userName}.pdf`);
+                }).catch(error => {
+                    console.error('Error capturing the content:', error);
+                });
+            });
+
+            $('#privacyModal').modal('show');
+        });
+    </script>
+</body>
+</html>
