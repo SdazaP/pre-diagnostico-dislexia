@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-07-2024 a las 01:27:40
+-- Tiempo de generación: 18-07-2024 a las 20:13:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `institución`
+-- Estructura de tabla para la tabla `institucion`
 --
 
-CREATE TABLE `institución` (
+CREATE TABLE `institucion` (
   `idInstitucion` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
   `nombre` varchar(30) DEFAULT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `institución` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `institución`
+-- Volcado de datos para la tabla `institucion`
 --
 
-INSERT INTO `institución` (`idInstitucion`, `logo`, `nombre`, `descripcion`, `numero`, `correo`, `ubicacion`) VALUES
+INSERT INTO `institucion` (`idInstitucion`, `logo`, `nombre`, `descripcion`, `numero`, `correo`, `ubicacion`) VALUES
 (1, 'ubr_tepexi.jpg', 'UBR de Tepexi de Rodríguez ', 'La UBR Tepexi de Rodríguez es una área asignada para la rehabilitación biopsicosocial, con el objetivo principal de brindar a los usuarios una atención con personal capacitado para una rehabilitación total o parcial, con un trato digno y humano.', '0', '@', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242028.1317446275!2d-98.07443636231558!3d18.588029499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cf7997259fc043%3A0xbc22cb2b3aa6470b!2sUnidad%20B%C3%A1sica%20de%20Rehabilitaci%C3%B3n%20de%20Tepexi%20de%20Rodr%C3%ADguez!5e0!3m2!1ses-419!2smx!4v1720113906965!5m2!1ses-419!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
 (3, 'ubr_ixcaq.jpg', 'UBR Ixcaquixtla', 'Institución dedicada a proporcionar servicios de rehabilitación física a personas con discapacidad temporal o permanente. Su objetivo es mejorar la calidad de vida de sus usuarios mediante programas y tratamientos específicos que les ayuden a recuperar o ', '0', 'unidad_basica_rehabilitacion@a', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242208.21651247778!2d-98.13383102416994!3d18.460844186133503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cf7d7fca236123%3A0x25908c7d3fea6cc5!2sUBR%20Ixcaquixtla!5e0!3m2!1ses-419!2smx!4v1720115122949!5m2!1ses-419!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
 (4, 'ubr_ye.jpg', 'UBR Yehualtepec', 'Institución dedicada a proporcionar servicios de rehabilitación integral a personas con discapacidad temporal o permanente. Su misión es mejorar la calidad de vida de sus usuarios mediante programas y tratamientos que les ayuden a recuperar o mantener sus', '0', '@', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d261246.1011642175!2d-97.9229729476441!3d18.691206407359164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c57b9dd27f9a2b%3A0x9fd154c59443b7bf!2sUBR%2C%20Unidad%20B%C3%A1sica%20de%20Rehabilitaci%C3%B3n%20Yehualtepec!5e0!3m2!1ses-419!2smx!4v1720115716450!5m2!1ses-419!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>');
@@ -81,9 +81,9 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Indices de la tabla `institución`
+-- Indices de la tabla `institucion`
 --
-ALTER TABLE `institución`
+ALTER TABLE `institucion`
   ADD PRIMARY KEY (`idInstitucion`);
 
 --
@@ -104,22 +104,22 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `institución`
+-- AUTO_INCREMENT de la tabla `institucion`
 --
-ALTER TABLE `institución`
+ALTER TABLE `institucion`
   MODIFY `idInstitucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
