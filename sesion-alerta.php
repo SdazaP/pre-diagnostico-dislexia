@@ -60,7 +60,7 @@ if (!isset($_SESSION["idUsuario"])) {
 <body>
     <div class="container">
         <h2>Este usuario y correo ya ha sido registrado</h2>
-        <p>Recuerda que tambien puedes consultar tus resultados en tu correo electrónico</p>
+        <p>Recuerda que ya has descargado el archivo pdf con tus resultados,pero puedes volver a descargarlo en ver resultados.</p>
         <a href="lista-resultados.php" class="btn btn-primary">Ver resultados</a>
         <a href="memorama.php" class="btn btn-primary">Reintentar prueba</a>
     </div>
