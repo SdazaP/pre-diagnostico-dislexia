@@ -2,7 +2,7 @@
     include("template/header.php");
     include("db/db.php");
 
-    $sql = "SELECT * FROM institución";
+    $sql = "SELECT * FROM institucion";
     $stmt = $conexion->prepare($sql);
     $stmt->execute();
 
