@@ -27,16 +27,16 @@ if (!isset($_SESSION["idUsuario"])) {
 
 <body>
 
-    <section class="container mt-4 memo">
-        <div class="text-center">
+    <div class="container encabezado-memo">
+        <div class="texto-memo">
             <h1>Memorama</h1>
             <p>Para jugar al memorama, haz clic en dos cartas para descubrirlas; si son iguales, permanecerán descubiertas, y si no, se volverán a ocultar. El objetivo es emparejar todas las cartas.</p>
         </div>
-    </section>
+    </div>
 
-    <section class="memory-game">
+    <div class="memory-game">
         <div id="memory-cards" class="memo-cards"></div>
-    </section>
+    </div>
 
     <div id="div-btn-sig" class="div-btn-sig" style="display: none;">
         <a class="btn btn-primary sig-btn" href="ejercicio-cubos/ejercicio-cubos.php" role="button">Siguiente prueba</a>
