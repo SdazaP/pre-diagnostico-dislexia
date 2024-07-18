@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION["idUsuario"])) {
+    header("Location: prueba-registro.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

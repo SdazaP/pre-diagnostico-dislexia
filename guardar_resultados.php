@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["idUsuario"])) {
-    header("Location: ../prueba-registro.php");
+    header("Location: prueba-registro.php");
     exit();
 }
 
