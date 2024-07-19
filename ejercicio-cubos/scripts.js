@@ -1,5 +1,24 @@
 const options = document.querySelectorAll('.option');
 const dropzones = document.querySelectorAll('.pattern-slot[data-exercise]');
+let inicioTiempo = new Date().getTime();
+
+window.addEventListener('beforeunload', function (event) {
+    let endTime = new Date().getTime();
+    let timeSpent = (endTime - startTime)
+
+    const Tprueba = {
+        test: 2,
+        tiempo: timeSpent
+    }
+
+    const url = '../db/log-time.php';
+    const data = JSON.stringify(Tprueba);
+
+    navigator.sendBeacon(url, data);
+
+    console.log('Datos enviados correctamente a log-time.php');
+
+});
 
 options.forEach(option => {
     option.addEventListener('dragstart', dragStart);

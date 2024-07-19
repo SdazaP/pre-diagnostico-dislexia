@@ -3,6 +3,25 @@ const divParaActivar = document.getElementById('div-btn-sig');
 let chosenCards = [];
 let matchedCards = [];
 let intentos = 0; 
+let inicioTiempo = new Date().getTime();
+
+window.addEventListener('beforeunload', function (event) {
+    let endTime = new Date().getTime();
+    let timeSpent = (endTime - startTime)
+
+    const Tprueba = {
+        test: 1,
+        tiempo: timeSpent
+    }
+
+    const url = 'db/log-time.php';
+    const data = JSON.stringify(Tprueba);
+
+    navigator.sendBeacon(url, data);
+
+    console.log('Datos enviados correctamente a log-time.php');
+
+});
 
 function shuffleCards(array) {
     for (let i = array.length - 1; i > 0; i--) {

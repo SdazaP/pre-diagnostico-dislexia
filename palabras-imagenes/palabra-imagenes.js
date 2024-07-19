@@ -1,6 +1,25 @@
 const words = document.querySelectorAll('.word');
 const dropzones = document.querySelectorAll('.dropzone');
 const finalizeButton = document.getElementById('finalizeButton');
+let inicioTiempo = new Date().getTime();
+
+window.addEventListener('beforeunload', function (event) {
+    let endTime = new Date().getTime();
+    let timeSpent = (endTime - startTime)
+
+    const Tprueba = {
+        test: 3,
+        tiempo: timeSpent
+    }
+
+    const url = '../db/log-time.php';
+    const data = JSON.stringify(Tprueba);
+
+    navigator.sendBeacon(url, data);
+
+    console.log('Datos enviados correctamente a log-time.php');
+
+});
 
 words.forEach(word => {
     word.addEventListener('dragstart', dragStart);

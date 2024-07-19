@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2024 a las 20:13:45
+-- Tiempo de generación: 19-07-2024 a las 20:21:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -60,6 +60,10 @@ CREATE TABLE `reporte` (
   `prueba2` int(11) DEFAULT NULL,
   `prueba3` int(11) DEFAULT NULL,
   `prueba4` int(11) DEFAULT NULL,
+  `Tprueba1` varchar(30) DEFAULT NULL,
+  `Tprueba2` varchar(30) DEFAULT NULL,
+  `Tprueba3` varchar(30) DEFAULT NULL,
+  `Tprueba4` varchar(30) DEFAULT NULL,
   `resultado` int(11) DEFAULT NULL,
   `tiempo` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

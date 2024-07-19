@@ -1,5 +1,24 @@
 const syllables = document.querySelectorAll('.syllable');
 const dropzones = document.querySelectorAll('.word-slot');
+let inicioTiempo = new Date().getTime();
+
+window.addEventListener('beforeunload', function (event) {
+    let endTime = new Date().getTime();
+    let timeSpent = (endTime - startTime)
+
+    const Tprueba = {
+        test: 4,
+        tiempo: timeSpent
+    }
+
+    const url = '../db/log-time.php';
+    const data = JSON.stringify(Tprueba);
+
+    navigator.sendBeacon(url, data);
+
+    console.log('Datos enviados correctamente a log-time.php');
+
+});
 
 syllables.forEach(syllable => {
     syllable.addEventListener('dragstart', dragStart);

@@ -57,7 +57,7 @@ if (isset($data['test'], $data['correct'])) {
         $stmt->bindParam(':prueba4', $prueba4);
         
         if ($stmt->execute()) {
-            echo "Registro exitoso: Correctas = $correct";
+            echo "Registro exitoso";
             $lastId = $conexion->lastInsertId();
             $_SESSION['idReporte'] = $lastId;
             unset($_SESSION['prueba1']);
