@@ -6,18 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio de Patrones</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script src="../js/timerInicio.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Ejercicio de Patrones</h1>
-        <h2>Instrucciones: Completa el espacio vacío arrastrando la figura que creas correcta para ti.</h2>
+        <h3><strong>Instrucciones: Completa el espacio vacío arrastrando la figura que creas correcta para ti.</strong></h2>
         <p>Nota: Para avanzar al siguiente ejercicio debes dar una respuesta.</p>
         
        <!-- Ejercicio 1 -->
 <div id="exercise1-section">
-    <h2>Ejercicio 1</h2>
+    <h2 class="exercise-title">Ejercicio 1</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: yellow;"></div>
@@ -40,7 +46,7 @@
 
 <!-- Ejercicio 2 -->
 <div id="exercise2-section" style="display:none;">
-    <h2>Ejercicio 2</h2>
+    <h2 class="exercise-title">Ejercicio 2</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: red; border-radius: 50%;"></div>
@@ -63,7 +69,7 @@
 
 <!-- Ejercicio 3 -->
 <div id="exercise3-section" style="display:none;">
-    <h2>Ejercicio 3</h2>
+    <h2 class="exercise-title">Ejercicio 3</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: red; width: 50px; height: 50px;"></div>
@@ -85,7 +91,7 @@
 
 <!-- Ejercicio 4 -->
 <div id="exercise4-section" style="display:none;">
-    <h2>Ejercicio 4</h2>
+    <h2 class="exercise-title">Ejercicio 4</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: red; border-radius: 50%;"></div>
@@ -108,7 +114,7 @@
 
 <!-- Ejercicio 5 -->
 <div id="exercise5-section" style="display:none;">
-    <h2>Ejercicio 5</h2>
+    <h2 class="exercise-title">Ejercicio 5</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: blue; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
@@ -131,7 +137,7 @@
 
 <!-- Ejercicio 6 -->
 <div id="exercise6-section" style="display:none;">
-    <h2>Ejercicio 6</h2>
+    <h2 class="exercise-title">Ejercicio 6</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: red; border-radius: 50%;"></div>
@@ -153,7 +159,7 @@
 
 <!-- Ejercicio 7 -->
 <div id="exercise7-section" style="display:none;">
-    <h2>Ejercicio 7</h2>
+    <h2 class="exercise-title">Ejercicio 7</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: yellow; border-radius: 50%;"></div>
@@ -175,7 +181,7 @@
 
 <!-- Ejercicio 8 -->
 <div id="exercise8-section" style="display:none;">
-    <h2>Ejercicio 8</h2>
+    <h2 class="exercise-title">Ejercicio 8</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: green; width: 20px; height: 20px;"></div>
@@ -197,7 +203,7 @@
 
 <!-- Ejercicio 9 -->
 <div id="exercise9-section" style="display:none;">
-    <h2>Ejercicio 9</h2>
+    <h2 class="exercise-title">Ejercicio 9</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: blue; border-radius: 50%;"></div>
@@ -219,7 +225,7 @@
 
 <!-- Ejercicio 10 -->
 <div id="exercise10-section" style="display:none;">
-    <h2>Ejercicio 10</h2>
+    <h2 class="exercise-title">Ejercicio 10</h2>
     <div class="exercise-container">
         <div class="pattern-container">
             <div class="pattern-slot" style="background-color: orange; border-radius: 50%;"></div>

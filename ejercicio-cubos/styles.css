@@ -33,7 +33,10 @@ header {
     background-color: #fff;
     text-align: center;
 }
-
+.exercise-title {
+    text-align: left;
+    font-weight: bold;
+}
 .pattern-container, .options-container {
     display: flex;
     justify-content: center;
