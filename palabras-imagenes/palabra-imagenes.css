@@ -1,3 +1,11 @@
+.no-drag {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    use-drag: none;
+}
+
 .words-container {
     display: flex;
     flex-direction: column;

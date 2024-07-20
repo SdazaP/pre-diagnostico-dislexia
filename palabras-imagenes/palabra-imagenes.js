@@ -139,5 +139,19 @@ document.querySelectorAll('div[id^="ejercicio"]').forEach(section => {
     const nextButton = section.querySelector('button');
     if (nextButton) {
         nextButton.disabled = true;
+        nextButton.addEventListener('click', () => {
+            const nextSectionId = nextButton.getAttribute('onclick').match(/'([^']+)'/)[1];
+            const currentSectionId = section.id;
+            nextSection(nextSectionId, currentSectionId);
+        });
     }
 });
+
+// Evitar que las imágenes sean arrastrables
+const images = document.querySelectorAll('.exercise-image img');
+images.forEach(image => {
+    image.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
+});
+y

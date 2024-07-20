@@ -9,7 +9,7 @@ window.addEventListener('beforeunload', function (event) {
     const Tprueba = {
         test: 4,
         tiempo: timeSpent
-    }
+    };
 
     const url = '../db/log-time.php';
     const data = JSON.stringify(Tprueba);
@@ -17,7 +17,6 @@ window.addEventListener('beforeunload', function (event) {
     navigator.sendBeacon(url, data);
 
     console.log('Datos enviados correctamente a log-time.php');
-
 });
 
 syllables.forEach(syllable => {
@@ -30,7 +29,11 @@ dropzones.forEach(dropzone => {
 });
 
 function dragStart(e) {
-    e.dataTransfer.setData('text/plain', e.target.dataset.syllable);
+    if (e.target.classList.contains('static')) {
+        e.preventDefault();
+    } else {
+        e.dataTransfer.setData('text/plain', e.target.dataset.syllable);
+    }
 }
 
 function dragOver(e) {
@@ -45,7 +48,6 @@ function drop(e) {
     if (dropzone.classList.contains('word-slot') && !dropzone.dataset.syllable && dropzone.textContent.trim() === "") {
         dropzone.textContent = data;
         dropzone.dataset.syllable = data;
-        dropzone.classList.add('occupied');  
 
         const currentSection = dropzone.closest('div[id^="ejercicio"]');
         const nextButton = currentSection.querySelector('button');
@@ -117,7 +119,7 @@ function capturarResultadoTest4() {
     const resultados = {
         test: 4,
         correct: correctCount,
-    }
+    };
 
     fetch('../guardar_resultados.php', {
         method: 'POST',
@@ -144,5 +146,26 @@ document.querySelectorAll('div[id^="ejercicio"]').forEach(section => {
     const nextButton = section.querySelector('button');
     if (nextButton) {
         nextButton.disabled = true;
+        nextButton.addEventListener('click', () => {
+            const nextSectionId = nextButton.getAttribute('onclick').match(/'([^']+)'/)[1];
+            const currentSectionId = section.id;
+            nextSection(nextSectionId, currentSectionId);
+        });
     }
+});
+
+// Evitar que las imágenes sean arrastrables
+const images = document.querySelectorAll('.exercise-image img');
+images.forEach(image => {
+    image.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
+});
+
+// Evitar que las sílabas estáticas sean arrastrables
+const staticSlots = document.querySelectorAll('.word-slot.static');
+staticSlots.forEach(slot => {
+    slot.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
 });

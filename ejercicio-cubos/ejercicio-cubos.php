@@ -165,14 +165,14 @@
             <div class="pattern-slot" style="background-color: yellow; border-radius: 50%;"></div>
             <div class="pattern-slot" style="background-color: blue; border-radius: 50%;"></div>
             <div class="pattern-slot" style="background-color: red; border-radius: 50%;"></div>
-            <div class="pattern-slot" style="background-color: white; border-radius: 50%;"></div>
+            <div class="pattern-slot" style="background-color: green; border-radius: 50%;"></div>
             <div class="pattern-slot" id="dropzone7" data-exercise="7"></div>
         </div>
         <div class="options-container">
             <div class="option" draggable="true" data-answer="option1" data-exercise="7" style="background-color: yellow; border-radius: 50%;"></div>
             <div class="option" draggable="true" data-answer="option2" data-exercise="7" style="background-color: blue; border-radius: 50%;"></div>
             <div class="option" draggable="true" data-answer="option3" data-exercise="7" style="background-color: red; border-radius: 50%;"></div>
-            <div class="option" draggable="true" data-answer="option4" data-exercise="7" style="background-color: white; border-radius: 50%;"></div>
+            <div class="option" draggable="true" data-answer="option4" data-exercise="7" style="background-color: green; border-radius: 50%;"></div>
             <div class="option" draggable="true" data-answer="option5" data-exercise="7" style="background-color: orange; border-radius: 50%;"></div>
         </div>
     </div>
