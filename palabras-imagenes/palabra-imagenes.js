@@ -94,7 +94,7 @@ function capturarResultadoTest3() {
         { dropzone: 'dropzone2', correctWord: 'camisa' },
         { dropzone: 'dropzone3', correctWord: 'bicicleta' },
         { dropzone: 'dropzone4', correctWord: 'helicoptero' },
-        { dropzone: 'dropzone5', correctWord: 'cansado' },
+        { dropzone: 'dropzone5', correctWord: 'sombrero' },
         { dropzone: 'dropzone6', correctWord: 'piscina' },
         { dropzone: 'dropzone7', correctWord: 'cangrejo' },
         { dropzone: 'dropzone8', correctWord: 'jirafa' },

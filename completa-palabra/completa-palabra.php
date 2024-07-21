@@ -128,18 +128,18 @@
             <div class="exercise-container">
                 <div class="exercise-content">
                     <div class="word-container">
-                        <div class="word-slot static">can</div>
-                        <div class="word-slot static">sa</div>
+                        <div class="word-slot static">som</div>
+                        <div class="word-slot static">bre</div>
                         <div class="word-slot" id="dropzone5"></div>
                     </div>
                     <div class="syllables-container">
-                        <div class="syllable" draggable="true" data-syllable="do">do</div>
+                        <div class="syllable" draggable="true" data-syllable="ro">ro</div>
                         <div class="syllable" draggable="true" data-syllable="bo">bo</div>
-                        <div class="syllable" draggable="true" data-syllable="ca">ca</div>
+                        <div class="syllable" draggable="true" data-syllable="do">do</div>
                     </div>
                 </div>
                 <div class="exercise-image">
-                    <img src="../images/cansado.png" alt="Imagen Ejercicio 5" class="no-drag">
+                    <img src="../images/sombrero.png" alt="Imagen Ejercicio 5" class="no-drag">
                 </div>
             </div>
             <button class="siguiente-btn" onclick="nextSection('ejercicio6', 'ejercicio5')" disabled>Siguiente</button>

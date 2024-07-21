@@ -96,7 +96,7 @@ function capturarResultadoTest4() {
         { dropzone: 'dropzone2', correctSyllable: 'mi' },
         { dropzone: 'dropzone3', correctSyllable: 'ci' },
         { dropzone: 'dropzone4', correctSyllable: 'li' },
-        { dropzone: 'dropzone5', correctSyllable: 'do' },
+        { dropzone: 'dropzone5', correctSyllable: 'ro' },
         { dropzone: 'dropzone6', correctSyllable: 'ci' },
         { dropzone: 'dropzone7', correctSyllable: 'jo' },
         { dropzone: 'dropzone8', correctSyllable: 'ji' },

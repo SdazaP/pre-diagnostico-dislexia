@@ -102,11 +102,11 @@
             <h2>Ejercicio 5</h2>
             <div class="exercise-container">
                 <div class="exercise-image">
-                    <img src="../images/cansado.png" alt="Cansado" class="no-drag">
+                    <img src="../images/sombrero.png" alt="Cansado" class="no-drag">
                     <div class="dropzone" id="dropzone5" data-exercise="5"></div>
                 </div>
                 <div class="exercise-words">
-                    <div class="word" draggable="true" data-word="cansado">Cansado</div>
+                    <div class="word" draggable="true" data-word="sombrero">sombrero</div>
                     <div class="word" draggable="true" data-word="jirafa">Jirafa</div>
                     <div class="word" draggable="true" data-word="zapato">Zapato</div>
                 </div>
