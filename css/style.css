@@ -634,6 +634,10 @@ h1 {
     word-wrap: break-word;
 }
 
+.list-repo{
+    margin-left: 40px;
+}
+
 /* responsive */
 
 @media (max-width: 426px) {

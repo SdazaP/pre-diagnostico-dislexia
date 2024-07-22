@@ -1,16 +1,7 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dislexiakids_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include("db/db.php");
 
 // Obtén el id del usuario desde la URL o la sesión
 $idUsuario = isset($_GET['idU']) ? $_GET['idU'] : (isset($_SESSION["idUsuario"]) ? $_SESSION["idUsuario"] : null);
@@ -22,43 +13,50 @@ if ($idUsuario === null) {
 }
 
 // Obtén la información del usuario
-$query = "SELECT * FROM usuario WHERE idUsuario = ?";
-$stmt = mysqli_prepare($conn, $query);
-mysqli_stmt_bind_param($stmt, 's', $idUsuario);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-$user_info = mysqli_fetch_assoc($result);
-mysqli_stmt_close($stmt);
+$query = "SELECT * FROM usuario WHERE idUsuario = :idUsuario";
+$stmt = $conexion->prepare($query);
+$stmt->bindParam(':idUsuario', $idUsuario);
+$stmt->execute();
+$user_info = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
 
 // Obtén el reporte del usuario
-$query = "SELECT * FROM reporte WHERE idReporte = ?";
-$stmt = mysqli_prepare($conn, $query);
-mysqli_stmt_bind_param($stmt, 's', $idReporte);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-$user_report_info = mysqli_fetch_assoc($result);
-mysqli_stmt_close($stmt);
+$query = "SELECT * FROM reporte WHERE idReporte = :idReporte";
+$stmt = $conexion->prepare($query);
+$stmt->bindParam(':idReporte', $idReporte);
+$stmt->execute();
+$user_report_info = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
+
+$nivel_dislexia = $user_report_info['resultado'];
+
+$query = "SELECT * FROM niveles_dislexia WHERE nivel = :nivel";
+$stmt = $conexion->prepare($query);
+$stmt->bindParam(':nivel', $user_report_info['resultado']);
+$stmt->execute();
+$user_niveles_dislexia_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
 
 include("template/header.php") ?>
 
 <!-- Modal de Descargar reporte -->
 <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="privacyModalLabel">Descarga tu reporte</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Le recomendamos descargar su reporte justo ahora para evitar que pueda perder su información.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="downloadButton" class="btn btn-primary" data-dismiss="modal">Descargar</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyModalLabel">Descarga tu reporte</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Le recomendamos descargar su reporte justo ahora para evitar que pueda perder su información.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="downloadButton" class="btn btn-primary" data-dismiss="modal">Descargar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <body>
@@ -79,34 +77,39 @@ include("template/header.php") ?>
                 <div class="table-responsive">
                     <table class="tabla-result">
                         <tr>
-                            <th>Nombre</th>
                             <th>Memorama</th>
                             <th>Patrones</th>
                             <th>Palabra-Imagen</th>
                             <th>Completa Palabra</th>
                             <th>Tiempo</th>
-                            <th>Resultado Final</th>
+                            <th>Nivel de Dislexia</th>
                         </tr>
-                        <tr>                            
-                            <td><?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?></td>
+                        <tr>
                             <td><?php echo isset($user_report_info['prueba1']) ? $user_report_info['prueba1'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba2']) ? $user_report_info['prueba2'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba3']) ? $user_report_info['prueba3'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba4']) ? $user_report_info['prueba4'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['tiempo']) ? $user_report_info['tiempo'] : ""; ?></td>
+                            <td><?php echo isset($user_report_info['resultado']) ? $user_report_info['resultado'] : ""; ?></td>
                         </tr>
                     </table>
                 </div>
             </div>
             <h3>Pre-Diagnóstico</h3>
-            <p class="pre-diag">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <br>
+            <p>En base a los resultados obtenidos tenemos que el usuario "<?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?>" ...</p>
+            <ul class="list-repo">
+            <?php if (!empty($user_niveles_dislexia_info)) : ?>
+                <?php foreach ($user_niveles_dislexia_info as $nivel_dislexia) : ?>
+                    <li><?php echo isset($nivel_dislexia['descripcion']) ? $nivel_dislexia['descripcion'] : ""; ?></li>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            </ul>
         </div>
     </div>
 
     <?php include("template/footer.php") ?>
-    
+
     <!-- Incluye los scripts de html2canvas y jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -119,7 +122,9 @@ include("template/header.php") ?>
             document.getElementById('downloadButton').addEventListener('click', function() {
                 html2canvas(document.getElementById('content-to-pdf')).then(canvas => {
                     const imgData = canvas.toDataURL('image/png');
-                    const { jsPDF } = window.jspdf;
+                    const {
+                        jsPDF
+                    } = window.jspdf;
                     const pdf = new jsPDF();
                     const imgWidth = 210; // A4 width in mm
                     const pageHeight = 295; // A4 height in mm
@@ -146,4 +151,5 @@ include("template/header.php") ?>
         });
     </script>
 </body>
+
 </html>

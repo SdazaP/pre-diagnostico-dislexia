@@ -15,6 +15,7 @@ if (isset($data['test'], $data['tiempo'])) {
     $tiempo = $data['tiempo'];
     $NombreTprueba = "Tprueba" . $test;
 
+    $_SESSION[$NombreTprueba . 'SF'] = $tiempo;
     $_SESSION[$NombreTprueba] = formatearTiempo($tiempo);
 } else {
     $Tprueba1 = $_SESSION['Tprueba1'] ?? '';
@@ -22,6 +23,8 @@ if (isset($data['test'], $data['tiempo'])) {
     $Tprueba3 = $_SESSION['Tprueba3'] ?? '';
     $Tprueba4 = $_SESSION['Tprueba4'] ?? '';
     $timeSpent = $data['timeSpent'];
+
+    $_SESSION['TiempoPromedio'] = ($_SESSION['Tprueba2SF'] + $_SESSION['Tprueba3SF'] + $_SESSION['Tprueba4SF']) / 3;
 
     // Convertir el tiempo de milisegundos a minutos y segundos
 
