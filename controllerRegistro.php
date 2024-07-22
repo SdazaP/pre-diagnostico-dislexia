@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
             $lastId = $conexion->lastInsertId();
             $_SESSION['idUsuario'] = $lastId;
-            header('Location: memorama.php');
+            header('Location: inicio-prueba.php');
             exit();
         } else {
             $error_message = "Error al crear registro";

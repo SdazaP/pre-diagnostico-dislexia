@@ -9,6 +9,13 @@ if (!isset($_SESSION["idUsuario"])) {
 $idUsuario = $_SESSION["idUsuario"];
 
 include("db/db.php");
+
+// Obtener el nombre del usuario
+$stmtNombre = $conexion->prepare("SELECT nombre FROM usuario WHERE idUsuario = :idUsuario");
+$stmtNombre->bindParam(':idUsuario', $idUsuario, PDO::PARAM_INT);
+$stmtNombre->execute();
+$nombreUsuario = $stmtNombre->fetchColumn();
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +28,9 @@ include("db/db.php");
     <style>
         h1 {
             margin: 0 0 2em 0;
+        }
+        p{
+            margin:0 4em 0 0;
         }
     </style>
 </head>
@@ -44,6 +54,7 @@ include("db/db.php");
                         echo '<a href="reporte.php?idR=' . $row["idReporte"] . '&idU=' . $idUsuario . '" class="stretched-link">';
                         echo '<h5 class="card-title">Reporte ID: ' . $row["idReporte"] . '</h5>';
                         echo '<p class="card-text">Fecha: ' . $row["fecha"] . '</p>';
+                        echo '<p class="card-text">Usuario: ' . htmlspecialchars($nombreUsuario) . '</p>';
                         echo '</a>';
                         echo '</div>';
                         echo '</div>';
@@ -51,6 +62,7 @@ include("db/db.php");
                     }
                 } else {
                     echo '<p>No hay resultados.</p>';
+                    echo '<a href="memorama.php" class="btn btn-primary">Iniciar prueba</a>';
                 }
             ?>
         </div>
