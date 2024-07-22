@@ -52,15 +52,14 @@ if (isset($data['test'], $data['correct'])) {
         date_default_timezone_set('America/Mexico_City');
         $fechaActual = date('Y-m-d');
 
-        $sql = "INSERT INTO reporte (idUsuario, fecha, prueba1, prueba2, prueba3, prueba4, Tprueba1, resultado) VALUES (:idUsuario, :fecha, :prueba1, :prueba2, :prueba3, :prueba4, :Tprueba1, :resultado)";
+        $sql = "INSERT INTO reporte (idUsuario, fecha, prueba1, prueba2, prueba3, prueba4, resultado) VALUES (:idUsuario, :fecha, :prueba1, :prueba2, :prueba3, :prueba4, :resultado)";
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(':idUsuario', $idUsuario);
         $stmt->bindParam(':fecha', $fechaActual);
-        $stmt->bindParam(':prueba1', $PromedioRespuestas);
+        $stmt->bindParam(':prueba1', $prueba1);
         $stmt->bindParam(':prueba2', $prueba2);
         $stmt->bindParam(':prueba3', $prueba3);
         $stmt->bindParam(':prueba4', $prueba4);
-        $stmt->bindParam(':Tprueba1', $PromedioTiempo);
         $stmt->bindParam(':resultado', $resultado);
         
         if ($stmt->execute()) {
