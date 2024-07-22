@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-07-2024 a las 20:21:32
+-- Tiempo de generación: 22-07-2024 a las 17:43:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -49,6 +49,42 @@ INSERT INTO `institucion` (`idInstitucion`, `logo`, `nombre`, `descripcion`, `nu
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `niveles_dislexia`
+--
+
+CREATE TABLE `niveles_dislexia` (
+  `id` int(11) NOT NULL,
+  `nivel` varchar(10) DEFAULT NULL,
+  `descripcion` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `niveles_dislexia`
+--
+
+INSERT INTO `niveles_dislexia` (`id`, `nivel`, `descripcion`) VALUES
+(1, 'Leve', 'Dificultades menores con la lectura y la escritura.'),
+(2, 'Leve', 'Errores ocasionales en la ortografía.'),
+(3, 'Leve', 'Lectura más lenta de lo normal, pero generalmente comprensible.'),
+(4, 'Leve', 'Capacidad para compensar las dificultades con estrategias de aprendizaje.'),
+(5, 'Moderada', 'Problemas más consistentes con la lectura y la escritura.'),
+(6, 'Moderada', 'Errores frecuentes en la ortografía y la gramática.'),
+(7, 'Moderada', 'Lectura significativamente más lenta que la media.'),
+(8, 'Moderada', 'Necesidad de apoyo educativo y estrategias de aprendizaje específicas para manejar el trastorno.'),
+(9, 'Severa', 'Dificultades graves con la lectura y la escritura.'),
+(10, 'Severa', 'Errores constantes en la ortografía y la gramática.'),
+(11, 'Severa', 'Lectura extremadamente lenta y con poca comprensión.'),
+(12, 'Severa', 'Dependencia de ayudas tecnológicas y educativas intensivas.'),
+(13, 'Severa', 'Problemas con otras habilidades del lenguaje, como la fluidez y la comprensión oral.'),
+(14, 'Profunda', 'Incapacidad casi total para leer y escribir de manera funcional.'),
+(15, 'Profunda', 'Errores persistentes y graves en la ortografía y la gramática.'),
+(16, 'Profunda', 'Gran dificultad para comprender textos escritos.'),
+(17, 'Profunda', 'Requiere apoyo educativo y tecnológico muy intensivo.'),
+(18, 'Profunda', 'Afecta significativamente otras áreas del aprendizaje y el desarrollo personal.');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `reporte`
 --
 
@@ -68,6 +104,15 @@ CREATE TABLE `reporte` (
   `tiempo` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `reporte`
+--
+
+INSERT INTO `reporte` (`idReporte`, `idUsuario`, `fecha`, `prueba1`, `prueba2`, `prueba3`, `prueba4`, `Tprueba1`, `Tprueba2`, `Tprueba3`, `Tprueba4`, `resultado`, `tiempo`) VALUES
+(1, 1, '2024-07-19', 9, 9, 10, 10, '00:17', '00:34', '00:17', '00:16', NULL, '01:43'),
+(2, 1, '2024-07-19', 9, 5, 10, 9, '00:19', '00:38', '00:16', '03:43', NULL, '05:13'),
+(3, 1, '2024-07-21', 6, 6, 10, 6, '00:12', '00:21', '00:16', '00:24', NULL, '01:31');
+
 -- --------------------------------------------------------
 
 --
@@ -81,6 +126,13 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `correo`) VALUES
+(1, 'Sebastian', 'sdazap26@gmail.com');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -89,6 +141,12 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `institucion`
   ADD PRIMARY KEY (`idInstitucion`);
+
+--
+-- Indices de la tabla `niveles_dislexia`
+--
+ALTER TABLE `niveles_dislexia`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `reporte`
@@ -114,16 +172,22 @@ ALTER TABLE `institucion`
   MODIFY `idInstitucion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `niveles_dislexia`
+--
+ALTER TABLE `niveles_dislexia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
