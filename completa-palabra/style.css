@@ -83,8 +83,10 @@
     color: #fff;
 }
 
-.syllable {
+.syllable, .syllables-container .syllable {
     display: inline-block;
+    width: 90px;
+    height: 45px;
     padding: 12px 16px;
     margin: 0 10px;
     background-color: #35A7FF;
@@ -92,19 +94,23 @@
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.2em;
+    text-align: center; /* Centra el texto horizontalmente */
+    line-height: 15px;  /* Centra el texto verticalmente */
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.syllable:hover {
+
+
+.syllable:hover, .syllables-container .syllable:hover {
     background-color: #2A95E0;
     transform: translateY(-2px);
 }
 
-.syllable.correct {
+.syllable.correct, .syllables-container .syllable.correct {
     background-color: #4CAF50;
 }
 
-.syllable.incorrect {
+.syllable.incorrect, .syllables-container .syllable.incorrect {
     background-color: #FF6347;
 }
 
@@ -162,15 +168,10 @@
         width: 100%;
     }
     
-    .word-slot {
+    .word-slot, .syllable, .syllables-container .syllable {
         width: 70px;
         height: 50px;
         font-size: 1.2em;
-    }
-    
-    .syllable {
-        padding: 10px 14px;
-        font-size: 1em;
     }
     
     .exercise-image img {
@@ -185,15 +186,10 @@
 }
 
 @media (max-width: 480px) {
-    .word-slot {
+    .word-slot, .syllable, .syllables-container .syllable {
         width: 60px;
         height: 40px;
         font-size: 1em;
-    }
-    
-    .syllable {
-        padding: 8px 12px;
-        font-size: 0.9em;
     }
     
     .siguiente-btn, #finalizeButton {
