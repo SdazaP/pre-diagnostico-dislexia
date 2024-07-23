@@ -28,14 +28,16 @@ $stmt->execute();
 $user_report_info = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
-$nivel_dislexia = $user_report_info['resultado'];
+if ($user_report_info['resultado'] != "Sin síntomas de dislexia") {
+    $nivel_dislexia = $user_report_info['resultado'];
 
-$query = "SELECT * FROM niveles_dislexia WHERE nivel = :nivel";
-$stmt = $conexion->prepare($query);
-$stmt->bindParam(':nivel', $user_report_info['resultado']);
-$stmt->execute();
-$user_niveles_dislexia_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
+    $query = "SELECT * FROM niveles_dislexia WHERE nivel = :nivel";
+    $stmt = $conexion->prepare($query);
+    $stmt->bindParam(':nivel', $user_report_info['resultado']);
+    $stmt->execute();
+    $user_niveles_dislexia_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+}
 
 include("template/header.php") ?>
 
@@ -82,7 +84,6 @@ include("template/header.php") ?>
                             <th>Palabra-Imagen</th>
                             <th>Completa Palabra</th>
                             <th>Tiempo</th>
-                            <th>Nivel de Dislexia</th>
                         </tr>
                         <tr>
                             <td><?php echo isset($user_report_info['prueba1']) ? $user_report_info['prueba1'] : ""; ?></td>
@@ -90,21 +91,24 @@ include("template/header.php") ?>
                             <td><?php echo isset($user_report_info['prueba3']) ? $user_report_info['prueba3'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba4']) ? $user_report_info['prueba4'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['tiempo']) ? $user_report_info['tiempo'] : ""; ?></td>
-                            <td><?php echo isset($user_report_info['resultado']) ? $user_report_info['resultado'] : ""; ?></td>
                         </tr>
                     </table>
                 </div>
             </div>
             <h3>Pre-Diagnóstico</h3>
             <br>
-            <p>En base a los resultados obtenidos tenemos que el usuario "<?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?>" ...</p>
-            <ul class="list-repo">
-            <?php if (!empty($user_niveles_dislexia_info)) : ?>
-                <?php foreach ($user_niveles_dislexia_info as $nivel_dislexia) : ?>
-                    <li><?php echo isset($nivel_dislexia['descripcion']) ? $nivel_dislexia['descripcion'] : ""; ?></li>
-                <?php endforeach; ?>
+            <?php if ($user_report_info['resultado'] != "Sin síntomas de dislexia") : ?>
+                <p>Con base en los resultados obtenidos, tanto sus resultados en las pruebas como la velocidad con la que ha respondido; que ha sido un ritmo <strong><?php echo isset($user_report_info['velocidadPruebas']) ? $user_report_info['velocidadPruebas'] : ""; ?></strong>, tenemos que el usuario "<strong><?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?></strong>" ha obtenido un pre-diagnóstico en el cual se indica que su nivel de dislexia podría ser <strong><?php echo isset($user_report_info['resultado']) ? $user_report_info['resultado'] : ""; ?></strong> por lo que podría presentar las siguientes dificultades:</p>
+                <ul class="list-repo">
+                    <?php if (!empty($user_niveles_dislexia_info)) : ?>
+                        <?php foreach ($user_niveles_dislexia_info as $nivel_dislexia) : ?>
+                            <li><?php echo isset($nivel_dislexia['descripcion']) ? $nivel_dislexia['descripcion'] : ""; ?></li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+            <?php else : ?>
+                <p>Con base en los resultados obtenidos, tanto sus resultados en las pruebas como la velocidad con la que ha respondido que ha sido un ritmo <strong><?php echo isset($user_report_info['velocidadPruebas']) ? $user_report_info['velocidadPruebas'] : ""; ?></strong>, tenemos que el usuario "<strong><?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?></strong>" ha obtenido un pre-diagnóstico en el cual se indica que no se han presentado síntomas de dislexia.</p>
             <?php endif; ?>
-            </ul>
         </div>
     </div>
 

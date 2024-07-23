@@ -45,14 +45,16 @@ if (isset($data['test'], $data['correct'])) {
     if (isset($prueba1) && isset($prueba2) && isset($prueba3) && isset($prueba4)) {
 
         $PromedioRespuestas = ($prueba2 + $prueba3 + $prueba4) / 3;
-        $PromedioTiempo = $_SESSION['TiempoPromedio'];
+        $TiempoTotal = $_SESSION['TiempoTotal'];
 
-        $resultado = obtenerNivelDislexia($PromedioRespuestas, $PromedioTiempo);
+        $resultadoPruebas = obtenerNivelDislexia($PromedioRespuestas, $TiempoTotal);
+
+        $velocidadPruebas = $_SESSION['VelocidadPruebas'];
 
         date_default_timezone_set('America/Mexico_City');
         $fechaActual = date('Y-m-d');
 
-        $sql = "INSERT INTO reporte (idUsuario, fecha, prueba1, prueba2, prueba3, prueba4, resultado) VALUES (:idUsuario, :fecha, :prueba1, :prueba2, :prueba3, :prueba4, :resultado)";
+        $sql = "INSERT INTO reporte (idUsuario, fecha, prueba1, prueba2, prueba3, prueba4, velocidadPruebas, resultado) VALUES (:idUsuario, :fecha, :prueba1, :prueba2, :prueba3, :prueba4, :velocidadPruebas, :resultado)";
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(':idUsuario', $idUsuario);
         $stmt->bindParam(':fecha', $fechaActual);
@@ -60,7 +62,8 @@ if (isset($data['test'], $data['correct'])) {
         $stmt->bindParam(':prueba2', $prueba2);
         $stmt->bindParam(':prueba3', $prueba3);
         $stmt->bindParam(':prueba4', $prueba4);
-        $stmt->bindParam(':resultado', $resultado);
+        $stmt->bindParam(':velocidadPruebas', $velocidadPruebas);
+        $stmt->bindParam(':resultado', $resultadoPruebas);
         
         if ($stmt->execute()) {
             echo "Registro exitoso";
@@ -69,7 +72,8 @@ if (isset($data['test'], $data['correct'])) {
             unset($_SESSION['prueba1']);
             unset($_SESSION['prueba2']);
             unset($_SESSION['prueba3']);
-            unset($_SESSION['TiempoPromedio']);
+            unset($_SESSION['TiempoTotal']);
+            unset($_SESSION['VelocidadPruebas']);
         } else {
             echo "Error al registrar los datos: " . implode(", ", $stmt->errorInfo());
         }
@@ -77,8 +81,9 @@ if (isset($data['test'], $data['correct'])) {
 
 }
 
-function obtenerNivelDislexia($PromedioRespuestas, $PromedioTiempo) {
-    if ($PromedioRespuestas > 8 && $PromedioTiempo < 240) { 
+function obtenerNivelDislexia($PromedioRespuestas, $TiempoTotal) {
+    if ($PromedioRespuestas > 8 && $TiempoTotal < 360) { 
+        $_SESSION['VelocidadPruebas'] = "Extremadamente rápido";
         return "Sin síntomas de dislexia";
     }
 
@@ -92,14 +97,18 @@ function obtenerNivelDislexia($PromedioRespuestas, $PromedioTiempo) {
         $ponderacionRespuestas = 2; 
     }
 
-    if ($PromedioTiempo <= 240) { 
+    if ($TiempoTotal <= 600) { 
         $ponderacionTiempo = 8;
-    } elseif ($PromedioTiempo <= 300) { 
+        $_SESSION['VelocidadPruebas'] = "Muy rápido";
+    } elseif ($TiempoTotal <= 900) { 
         $ponderacionTiempo = 6;
-    } elseif ($PromedioTiempo <= 420) { 
+        $_SESSION['VelocidadPruebas'] = "Normal";
+    } elseif ($TiempoTotal <= 1200) { 
         $ponderacionTiempo = 4;
+        $_SESSION['VelocidadPruebas'] = "Lento";
     } else { 
         $ponderacionTiempo = 2;
+        $_SESSION['VelocidadPruebas'] = "Muy lento";
     }
 
     $promedioPonderaciones = ($ponderacionRespuestas + $ponderacionTiempo) / 2;

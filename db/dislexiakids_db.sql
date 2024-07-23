@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2024 a las 17:43:32
+-- Tiempo de generación: 23-07-2024 a las 18:53:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -100,7 +100,8 @@ CREATE TABLE `reporte` (
   `Tprueba2` varchar(30) DEFAULT NULL,
   `Tprueba3` varchar(30) DEFAULT NULL,
   `Tprueba4` varchar(30) DEFAULT NULL,
-  `resultado` int(11) DEFAULT NULL,
+  `velocidadPruebas` varchar(30) DEFAULT NULL,
+  `resultado` varchar(30) DEFAULT NULL,
   `tiempo` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -108,10 +109,9 @@ CREATE TABLE `reporte` (
 -- Volcado de datos para la tabla `reporte`
 --
 
-INSERT INTO `reporte` (`idReporte`, `idUsuario`, `fecha`, `prueba1`, `prueba2`, `prueba3`, `prueba4`, `Tprueba1`, `Tprueba2`, `Tprueba3`, `Tprueba4`, `resultado`, `tiempo`) VALUES
-(1, 1, '2024-07-19', 9, 9, 10, 10, '00:17', '00:34', '00:17', '00:16', NULL, '01:43'),
-(2, 1, '2024-07-19', 9, 5, 10, 9, '00:19', '00:38', '00:16', '03:43', NULL, '05:13'),
-(3, 1, '2024-07-21', 6, 6, 10, 6, '00:12', '00:21', '00:16', '00:24', NULL, '01:31');
+INSERT INTO `reporte` (`idReporte`, `idUsuario`, `fecha`, `prueba1`, `prueba2`, `prueba3`, `prueba4`, `Tprueba1`, `Tprueba2`, `Tprueba3`, `Tprueba4`, `velocidadPruebas`, `resultado`, `tiempo`) VALUES
+(1, 2, '2024-07-23', 8, 0, 0, 0, '00:14', '00:14', '00:14', '00:17', 'Muy rápido', 'Moderada', '01:16'),
+(4, 2, '2024-07-23', 9, 10, 10, 10, '00:17', '00:17', '00:24', '00:17', 'Extremadamente rápido', 'Sin síntomas de dislexia', '01:40');
 
 -- --------------------------------------------------------
 
@@ -130,7 +130,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `correo`) VALUES
-(1, 'Sebastian', 'sdazap26@gmail.com');
+(1, 'Sebastian', 'sdazap26@gmail.com'),
+(2, 'Ernesto', 'ernesto@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -181,13 +182,23 @@ ALTER TABLE `niveles_dislexia`
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idReporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `reporte`
+--
+ALTER TABLE `reporte`
+  ADD CONSTRAINT `reporte_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
