@@ -28,14 +28,16 @@ $stmt->execute();
 $user_report_info = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
-$nivel_dislexia = $user_report_info['resultado'];
+if ($user_report_info['resultado'] != "Sin síntomas de dislexia") {
+    $nivel_dislexia = $user_report_info['resultado'];
 
-$query = "SELECT * FROM niveles_dislexia WHERE nivel = :nivel";
-$stmt = $conexion->prepare($query);
-$stmt->bindParam(':nivel', $user_report_info['resultado']);
-$stmt->execute();
-$user_niveles_dislexia_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
+    $query = "SELECT * FROM niveles_dislexia WHERE nivel = :nivel";
+    $stmt = $conexion->prepare($query);
+    $stmt->bindParam(':nivel', $user_report_info['resultado']);
+    $stmt->execute();
+    $user_niveles_dislexia_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+}
 
 include("template/header.php") ?>
 
@@ -70,7 +72,8 @@ include("template/header.php") ?>
             <hr>
             <h1>Reporte</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            En este reporte se presentan los resultados obtenidos en las pruebas realizadas para la detección de dislexia en niños de 1º y 2º grado. Se ha registrado la recolección de los intentos en el juego de memorama, permitiendo evaluar la capacidad de retención y asociación visual del niño. Además, se han recolectado las respuestas correctas en las evaluaciones de Patrones de Figuras, Palabra-Imagen y Completa la Palabra. En la prueba de Patrones de Figuras, se midió la habilidad del niño para reconocer y completar patrones visuales y lógicos. En la evaluación de Palabra-Imagen, se valoró la capacidad del niño para asociar vocabulario con representaciones visuales. Finalmente, en la prueba de Completa la Palabra, se evaluaron sus habilidades de lectura y escritura al completar palabras incompletas. 
+            También se tomó el tiempo para medir la velocidad a la que se realizaron las pruebas, evaluando así la rapidez y precisión del niño. Estos datos nos permiten hacer una valoración integral de las capacidades y posibles dificultades relacionadas con la dislexia, proporcionando una base para intervenciones educativas personalizadas.
             </p>
             <h3>Resultados</h3>
             <div class="cont-tabla">
@@ -82,7 +85,6 @@ include("template/header.php") ?>
                             <th>Palabra-Imagen</th>
                             <th>Completa Palabra</th>
                             <th>Tiempo</th>
-                            <th>Nivel de Dislexia</th>
                         </tr>
                         <tr>
                             <td><?php echo isset($user_report_info['prueba1']) ? $user_report_info['prueba1'] : ""; ?></td>
@@ -90,21 +92,24 @@ include("template/header.php") ?>
                             <td><?php echo isset($user_report_info['prueba3']) ? $user_report_info['prueba3'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['prueba4']) ? $user_report_info['prueba4'] : ""; ?></td>
                             <td><?php echo isset($user_report_info['tiempo']) ? $user_report_info['tiempo'] : ""; ?></td>
-                            <td><?php echo isset($user_report_info['resultado']) ? $user_report_info['resultado'] : ""; ?></td>
                         </tr>
                     </table>
                 </div>
             </div>
             <h3>Pre-Diagnóstico</h3>
             <br>
-            <p>En base a los resultados obtenidos tenemos que el usuario "<?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?>" ...</p>
-            <ul class="list-repo">
-            <?php if (!empty($user_niveles_dislexia_info)) : ?>
-                <?php foreach ($user_niveles_dislexia_info as $nivel_dislexia) : ?>
-                    <li><?php echo isset($nivel_dislexia['descripcion']) ? $nivel_dislexia['descripcion'] : ""; ?></li>
-                <?php endforeach; ?>
+            <?php if ($user_report_info['resultado'] != "Sin síntomas de dislexia") : ?>
+                <p>Con base en los resultados obtenidos: las respuestas correctas  en las pruebas y la velocidad con la que ha respondido; se determina un tiempo: <strong><?php echo isset($user_report_info['velocidadPruebas']) ? $user_report_info['velocidadPruebas'] : ""; ?></strong>, indicando que el usuario "<strong><?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?></strong>" ha obtenido un pre-diagnóstico donde su nivel de dislexia podría ser <strong><?php echo isset($user_report_info['resultado']) ? $user_report_info['resultado'] : ""; ?></strong> por lo que podría presentar las siguientes dificultades:</p>
+                <ul class="list-repo">
+                    <?php if (!empty($user_niveles_dislexia_info)) : ?>
+                        <?php foreach ($user_niveles_dislexia_info as $nivel_dislexia) : ?>
+                            <li><?php echo isset($nivel_dislexia['descripcion']) ? $nivel_dislexia['descripcion'] : ""; ?></li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+            <?php else : ?>
+                <p>Con base en los resultados obtenidos: las respuestas correctas  en las pruebas y la velocidad con la que ha respondido; se determina un tiempo: <strong><?php echo isset($user_report_info['velocidadPruebas']) ? $user_report_info['velocidadPruebas'] : ""; ?></strong>, indicando que el usuario "<strong><?php echo isset($user_info['nombre']) ? $user_info['nombre'] : ""; ?></strong>" ha obtenido un pre-diagnóstico donde no se han presentado síntomas de dislexia.</p>
             <?php endif; ?>
-            </ul>
         </div>
     </div>
 
