@@ -6,7 +6,8 @@
     user-drag: none;
 }
 
-.static {
+.static,
+.filled {
     pointer-events: none;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
@@ -14,6 +15,7 @@
     -o-user-drag: none;
     user-drag: none;
     cursor: default;
+    user-select: none; /* Previene la selección del texto */
 }
 
 .words-container {
@@ -94,12 +96,10 @@
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.2em;
-    text-align: center; /* Centra el texto horizontalmente */
-    line-height: 15px;  /* Centra el texto verticalmente */
+    text-align: center;
+    line-height: 15px;
     transition: background-color 0.3s, transform 0.2s;
 }
-
-
 
 .syllable:hover, .syllables-container .syllable:hover {
     background-color: #2A95E0;
