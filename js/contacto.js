@@ -3,12 +3,16 @@ function mostrarModal() {
 }
 
 function toggleOtroAsunto() {
-    var select = document.getElementById("asunto");
+    var asunto = document.getElementById("asunto").value;
+    var otroAsuntoDiv = document.getElementById("otroAsuntoDiv");
     var otroAsunto = document.getElementById("otroAsunto");
-    if (select.value === "otro") {
-        otroAsunto.style.display = "block";
+
+    if (asunto === "otro") {
+        otroAsuntoDiv.style.display = "block";
+        otroAsunto.required = true;
     } else {
-        otroAsunto.style.display = "none";
+        otroAsuntoDiv.style.display = "none";
+        otroAsunto.required = false;
     }
 }
 
