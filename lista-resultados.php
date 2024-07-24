@@ -25,6 +25,7 @@ $nombreUsuario = $stmtNombre->fetchColumn();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Resultados</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         h1 {
             margin: 0 0 2em 0;

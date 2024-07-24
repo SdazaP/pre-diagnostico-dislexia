@@ -17,6 +17,7 @@ if (!isset($_SESSION["idUsuario"])) {
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+        <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         body {
             font-family: "Noto Sans", sans-serif;
