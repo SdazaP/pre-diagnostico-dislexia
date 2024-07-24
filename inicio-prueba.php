@@ -66,6 +66,7 @@ if (!isset($_SESSION["idUsuario"])) {
         <h1>Antes de iniciar</h1>
         <p>Recuerda que, como tutor, debes darle seguimiento al niño/niña en cada actividad, ya que pueden surgir dudas durante cada prueba. Esto no quiere decir que ayudes a responder las preguntas o el prediagnóstico será incorrecto.</p>
         <p>De igual forma, te invitamos a que asistas con un psicólogo para que tengas un diagnóstico más completo.</p>
+        <p>Por ultimo, si estas usando tu telefono, te pedimos que gires tu pantalla en horizontal para ver todo de menjor manera.</p>
         <a href="memorama.php" class="btn btn-primary">Iniciar prueba</a>
         <a href="evaluaciones.php" class="btn btn-primary">Salir</a>
     </div>

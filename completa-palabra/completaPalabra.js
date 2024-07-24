@@ -4,7 +4,7 @@ let inicioTiempo = new Date().getTime();
 
 window.addEventListener('beforeunload', function (event) {
     let endTime = new Date().getTime();
-    let timeSpent = (endTime - startTime)
+    let timeSpent = (endTime - inicioTiempo);
 
     const Tprueba = {
         test: 4,
@@ -29,7 +29,7 @@ dropzones.forEach(dropzone => {
 });
 
 function dragStart(e) {
-    if (e.target.classList.contains('static')) {
+    if (e.target.classList.contains('static') || e.target.classList.contains('filled')) {
         e.preventDefault();
     } else {
         e.dataTransfer.setData('text/plain', e.target.dataset.syllable);
@@ -48,6 +48,7 @@ function drop(e) {
     if (dropzone.classList.contains('word-slot') && !dropzone.dataset.syllable && dropzone.textContent.trim() === "") {
         dropzone.textContent = data;
         dropzone.dataset.syllable = data;
+        dropzone.classList.add('filled');
 
         const currentSection = dropzone.closest('div[id^="ejercicio"]');
         const nextButton = currentSection.querySelector('button');
@@ -100,7 +101,7 @@ function capturarResultadoTest4() {
         { dropzone: 'dropzone6', correctSyllable: 'ci' },
         { dropzone: 'dropzone7', correctSyllable: 'jo' },
         { dropzone: 'dropzone8', correctSyllable: 'ji' },
-        { dropzone: 'dropzone9', correctSyllable: 'pa' },
+        { dropzone: 'dropzone9', correctSyllable: 'ca' },
         { dropzone: 'dropzone10', correctSyllable: 'pe' }
     ];
 
@@ -162,10 +163,13 @@ images.forEach(image => {
     });
 });
 
-// Evitar que las sílabas estáticas sean arrastrables
+// Evitar que las sílabas estáticas sean arrastrables y seleccionables
 const staticSlots = document.querySelectorAll('.word-slot.static');
 staticSlots.forEach(slot => {
     slot.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
+    slot.addEventListener('selectstart', (e) => {
         e.preventDefault();
     });
 });
