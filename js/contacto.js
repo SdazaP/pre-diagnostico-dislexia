@@ -3,16 +3,12 @@ function mostrarModal() {
 }
 
 function toggleOtroAsunto() {
-    var asunto = document.getElementById("asunto").value;
-    var otroAsuntoDiv = document.getElementById("otroAsuntoDiv");
+    var select = document.getElementById("asunto");
     var otroAsunto = document.getElementById("otroAsunto");
-
-    if (asunto === "otro") {
-        otroAsuntoDiv.style.display = "block";
-        otroAsunto.required = true;
+    if (select.value === "otro") {
+        otroAsunto.style.display = "block";
     } else {
-        otroAsuntoDiv.style.display = "none";
-        otroAsunto.required = false;
+        otroAsunto.style.display = "none";
     }
 }
 
@@ -20,8 +16,10 @@ function validateForm(event) {
     var form = document.getElementById('contactForm');
     var inputs = form.querySelectorAll('input, select, textarea');
     var valid = true;
+
     inputs.forEach(function(input) {
-        if (input.value.trim() === '' && input.style.display !== 'none') {
+        // Ignora el campo 'otroAsunto' en la validación
+        if (input.name !== 'otroAsunto' && input.value.trim() === '' && input.style.display !== 'none') {
             input.classList.add('is-invalid');
             valid = false;
         } else {
@@ -34,6 +32,10 @@ function validateForm(event) {
         alert('Por favor, rellena todos los campos obligatorios.');
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('contactForm').addEventListener('submit', validateForm);
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('contactForm').addEventListener('submit', validateForm);
